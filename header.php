@@ -1,9 +1,7 @@
 <header id="nav">
   <div class="logo">
-    <a href="Index.php">
-      <img src="Midias/logo.svg" alt="Silksong" href="Index.php">
-      Silksong
-    </a>
+    <a href="Index.php" id="aLogo"><img src="Midias/logo.svg" alt="Silksong" href="Index.php"></a>
+    <a href="Index.php">Silksong</a>
   </div>
   <ul class="Menu">
     <li><a href="Index.php">Home</a></li>

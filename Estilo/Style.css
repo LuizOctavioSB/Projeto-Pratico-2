@@ -14,28 +14,36 @@
   font-style: normal;
 }
 
-a {
+a, h1, h2, h3{
   color: white;
 }
 
+#h1Index{
+  font-size: 45px;
+  margin-left: 6%;
+}
+
 /* Header */
-header {
-  padding: 33px 116px;
+#nav {
+  margin-bottom: 10%;
   align-items: center;
   display: flex;
   justify-content: space-between;
 }
 
 .Menu {
+  justify-content: center;
+  width: auto;
   display: flex;
 }
 
 .Menu li {
-  margin-right: 10px;
+  margin-right: 20%;
   display: inline-block;
 }
 
 .Menu li a{
+  font-size: 20px;
   color: rgb(166, 169, 184);
 }
 
@@ -46,7 +54,7 @@ header {
 .logo {
   display: inline-flex;
   align-items: center;
-  font-size: 24px;
+  font-size: 30px;
   line-height: 1;
 }
 
@@ -57,11 +65,21 @@ header {
 }
 
 .usuario {
+  font-size: 20px;
   font-weight: 600;
 }
 
 .logo img {
-  width: 15%;
+  width: 50px;
   vertical-align: middle;
-  margin-right: 5%;
+  margin-right: 20%;
+}
+
+#aLogo{
+  margin-right: 12%;
+}
+
+/* body */
+body {
+  margin: 2% 6% 0 6%;
 }

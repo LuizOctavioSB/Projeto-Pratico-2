@@ -13,6 +13,21 @@
   <?php 
     include "Header.php";
   ?>
-  <h1 id="h1Index">Playlists mais <br>acessadas</h1>
+  <section class="PLIndex"> 
+    <!-- espaço para as 4 playlists mais acessadas -->
+    <h1 id="h1Index">Playlists mais<br>acessadas</h1>
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </section>
+  <section>
+    <!-- espaço para ultima playlist ouvida -->
+  </section>
+  <?php
+  include "Footer.php";
+  ?>
 </body>
 </html>

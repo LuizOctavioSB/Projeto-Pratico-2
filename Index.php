@@ -27,7 +27,7 @@
     <!-- espaço para ultima playlist ouvida -->
   </section>
   <?php
-  include "Footer.php";
+  include "footer.php";
   ?>
 </body>
 </html>

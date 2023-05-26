@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="Estilo/style.css">
   <link rel="icon" href="Midias/logo.svg">
-  <title>Silksong</title>
+  <title>Silksong Web Player: Music</title>
 </head>
 
 <body>
@@ -27,7 +27,7 @@
     <!-- espaço para ultima playlist ouvida -->
   </section>
   <?php
-  include "footer.php";
+    include "footer.php";
   ?>
 </body>
 </html>

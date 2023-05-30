@@ -5,9 +5,9 @@
   </div>
   <ul class="Menu">
     <li><a href="Index.php">Home</a></li>
-    <li><a href="Index.php">Pesquisar</a></li>
-    <li><a href="Index.php">Playlists</a></li>
-    <li><a href="Index.php">Contato</a></li>
+    <li><a href="Pesquisa.php">Pesquisar</a></li>
+    <li><a href="Playlists.php">Playlists</a></li>
+    <li><a href="Contato.php">Contato</a></li>
   </ul>
   <div class="usuario">
     <a href="Login.php">Log In</a>

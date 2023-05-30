@@ -10,18 +10,17 @@
 </head>
 
 <body>
-  <header id="navLogin">
-    <a href="Index.php"><img src="Midias/logo.svg" alt="Silksong" href="Index.php"></a>
-    <a href="Index.php">Silksong</a>
-  </header>
+  <?php 
+    include "Header2.php";
+  ?>
   <form action="Index.php" method="get" id="form" id="login"> 
-    <ul>
+    <ul id="listaLogin">
       <li><input type="email" id="email" class="input" name="email" placeholder="Digite seu e-mail" required></li>
       <li><input type="password" id="senha" class="input" name="senha" placeholder="Digite sua senha" required></li>
       <li>
         <div id="buttonsLogin">
-          <button type="submit"><a>Login</a></button>
-          <button type="reset"><a>Criar conta<a></button>
+          <button><a>Login</a></button>
+          <button><a href="NovaConta.php">Criar conta<a></button>
         </div>
       </li>
     </ul>

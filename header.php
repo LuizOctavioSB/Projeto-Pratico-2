@@ -11,6 +11,6 @@
   </ul>
   <div class="usuario">
     <a href="Login.php">Log In</a>
-    <a href="NovaConta.php">Sign Up</a>
+    <button class="buttonSignUp"><a href="NovaConta.php">Sign Up</a></button>
   </div>
 </header>

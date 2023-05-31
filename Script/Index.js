@@ -10,4 +10,14 @@ document.addEventListener('DOMContentLoaded', function() {
       listaPLs.appendChild(novoItem);
     }
   });
+})
+
+document.addEventListener("DOMContentLoaded", function() {
+  var links = document.querySelectorAll(".Menu li a");
+
+  links.forEach(function(link) {
+    if (link.href === window.location.href) {
+      link.classList.add("active");
+    }
+  });
 });

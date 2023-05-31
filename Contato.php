@@ -14,7 +14,15 @@
     include "Header.php";
   ?>
   <main>
-    
+    <form action="Index.php" method="get" id="formContato"> 
+      <label>Motivo do contato:</label>
+      <div id="listaContato">
+        <input type="text" id="motivo" class="input" name="motivo" required placeholder="Assunto">
+        <textarea id="msg" class="input" name="msg" placeholder="Mensagem" required></textarea>
+        <input type="file" name="Mnsagem do aluno" id="msgAluno">
+        <button><a>Enviar</a></button>
+      </div>
+    </form>
   </main>
   <?php
     include "Footer.php";

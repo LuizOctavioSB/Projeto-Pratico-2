@@ -4,7 +4,7 @@
         <div id="div1">
           <h3>Silksong</h3>
           <ul id="paginasFooter">
-            <li><a href="Index.php">Home</a></li>•
+            <li><a href="/Index.php">Home</a></li>•
             <li><a>Playlist</a></li>•
             <li><a>Contato</a></li>
           </ul>

@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="Estilo/style.css">
+  <link rel="stylesheet" href="css/style.css">
   <link rel="icon" href="Midias/logo.svg">
   <title>Silksong Web Player: Music</title>
 </head>
 
 <body>
   <?php 
-    include "Header.php";
+    include "html/Header.php";
   ?>
   <section class="PLIndex"> 
     <!-- espaço para as 4 playlists mais acessadas -->
@@ -28,7 +28,7 @@
     <!-- espaço para ultima playlist ouvida -->
   </section>
   <?php
-    include "footer.php";
+    include "html/footer.php";
   ?>
 </body>
 </html>

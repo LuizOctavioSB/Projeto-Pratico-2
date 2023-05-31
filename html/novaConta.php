@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="Estilo/style.css">
+  <link rel="stylesheet" href="css/style.css">
   <link rel="icon" href="Midias/logo.svg">
   <title>Criar conta - Silksong</title>
 </head>
@@ -80,6 +80,18 @@
             <div>
               <input type="radio" id="feminino" class=criarConta name="genero" value="feminino">
               <label for="feminino">Feminino</label>
+            </div>
+            <div>
+              <input type="radio" id="naoBin" class=criarConta name="genero" value="naoBin" required>
+              <label for="naoBin">Não binario</label>
+            </div>
+            <div>
+              <input type="radio" id="outroGen" class=criarConta name="genero" value="outroGen">
+              <label for="outroGen">Outro</label>
+            </div>
+            <div>
+              <input type="radio" id="naoDiz" class=criarConta name="genero" value="naoDiz" required>
+              <label for="naoDiz">Prefiro não dizer</label>
             </div>
           </div>
         </div>

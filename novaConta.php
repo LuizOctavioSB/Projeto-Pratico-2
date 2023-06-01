@@ -10,7 +10,7 @@
   <title>Criar conta - Silksong</title>
 </head>
 
-<body>
+<body id="bodyNovaAcc">
   <?php
   include "php/header2.php";
   ?>

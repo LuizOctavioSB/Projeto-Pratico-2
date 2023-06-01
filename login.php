@@ -10,7 +10,7 @@
   <title>Login - Silksong</title>
 </head>
 
-<body>
+<body id="bodyLogin">
   <?php
   include "php/header2.php";
   ?>

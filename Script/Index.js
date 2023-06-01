@@ -23,22 +23,3 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 // - - - - - - - - - - - - - - - - - -  - - - - - - - - - -//
-function validarFormulario() {
-  // Verifique se todos os campos obrigatórios foram preenchidos
-  if (
-    document.getElementById('email').value === '' ||
-    document.getElementById('senha').value === '' ||
-    document.getElementById('nome').value === '' ||
-    document.getElementById('dia').value === '' ||
-    document.getElementById('mes').value === '' ||
-    document.getElementById('ano').value === '' ||
-    document.querySelector('input[name="genero"]:checked') === null ||
-    !document.getElementById('termos').checked
-  ) {
-    alert('Por favor, preencha todos os campos obrigatórios.');
-    return;
-  }
-
-  // Se todos os campos estiverem preenchidos, envie o formulário
-  document.getElementById('formCadastro').submit();
-}

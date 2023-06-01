@@ -1,14 +1,10 @@
 /* - - - - - - - - - - - - - - - - - - Geral - - - - - - - - - - - - - - - - - -*/
 * {
   font-family: 'Eina 03', sans-serif;
-  text-decoration: none;
+  text-decoration: none!important;
   padding: 0;
   margin: 0;
   list-style: none;
-}
-
-:root{
-  --cor-destaque: #AC00FD;
 }
 
 @font-face {
@@ -18,7 +14,19 @@
   font-style: normal;
 }
 
-a, h1, h2, h3{
+:root{
+  --cor-fundo: #050718;
+  --cor-destaque: #AC00FD;
+  --cor-roxo-modal: #8707ff;
+}
+
+#nav a,
+#h1Index,
+#bodyPLs h1,
+#divPai h3,
+#div1 a,
+#bodyLogin a
+{
   color: white;
 }
 
@@ -26,96 +34,6 @@ a, h1, h2, h3{
   font-size: 45px;
 }
 
-/* - - - - - - - - - - - - - - - - - - inputs - - - - - - - - - - - - - - - - - -*/
-#formCadastro input,
-#formCadastro select,
-#formCadastro textarea,
-.input, 
-.select, 
-.textarea{
-  color: #8707ff;
-  border: 2px solid #8707ff;
-  border-radius: 10px;
-  padding: 10px 25px;
-  background: transparent;
-}
-
-.input:active {
-  box-shadow: 2px 2px 15px #8707ff inset;
-}
-
-label {
- color: rgba(166, 169, 184, 1)
-}
-
-.criarConta{
-  width: auto;
-  height: auto;
-}
-
-.input::placeholder {
-  color: #ffffff;
-}
-
-iframe{
-  width: 20vw;
-}
-/* - - - - - - - - - - - - - - - - - - - Formulario - - - - - - - - - - - - - - - - - - */
-#form{
-  display: flex;
-  justify-content: center;
-}
-
-#form li{
-  margin-bottom:  5%;
-}
-
-#buttonsLogin, 
-#formContato button{
-  gap: 10px;
-  margin-left: 10px;
-  display: flex;
-  margin-top: 10px;
-  padding: 8px;
-  
-}
-
-#buttonsLogin button,
-#listaContato button,
-#formCadastro button{
-  background: linear-gradient(90deg, #FF4040 0%, #AC00FD 96.52%);
-  border-radius: 6px;
-  width: 98px;
-  height: 44px;
-  outline: none;
-  border: 0;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-#buttonsLogin button:active{
-  transform: translateY(2px);
-}
-
-#buttonsLogin a{
-  font-weight: 600;
-}
-
-#recuperaSenha{
-  text-align: center;
-}
-
-#formLogin{
-  display: flex;
-  flex-direction: column;
-  gap: 2vh;
-  justify-content: center;
-  align-items: center;
-}
-
-#formLogin input{
-  width: 100%;
-}
 /* - - - - - - - - - - - - - - - - - - - Tela criar conta - - - - - - - - - - - - - - */
 #mainNovaConta{
   display: flex;
@@ -125,7 +43,7 @@ iframe{
 #parteSuperiorForm{
   display: flex;
   align-items: flex-start;
-  gap: 4vw; 
+  gap: 4vw;
   margin-bottom: 2vh;
 }
 
@@ -166,7 +84,7 @@ iframe{
   width: 100%;
   flex-wrap: wrap;
   justify-content: center;
-  border: 2px solid #8707ff;
+  border: 2px solid var(--cor-roxo-modal);
 }
 
 #gen{
@@ -200,6 +118,97 @@ label.required::after {
   margin-left: 4px;
 }
 
+/* - - - - - - - - - - - - - - - - - - - Formulario - - - - - - - - - - - - - - - - - - */
+#form{
+  display: flex;
+  justify-content: center;
+}
+
+#form li{
+  margin-bottom:  5%;
+}
+
+#buttonsLogin,
+#formContato button{
+  gap: 10px;
+  margin-left: 10px;
+  display: flex;
+  margin-top: 10px;
+  padding: 8px;
+}
+
+#buttonsLogin button,
+#listaContato button,
+#formCadastro button{
+  background: linear-gradient(90deg, #FF4040 0%, var(--cor-destaque) 96.52%);
+  border-radius: 6px;
+  width: 98px;
+  height: 44px;
+  outline: none;
+  border: 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#buttonsLogin button:active{
+  transform: translateY(2px);
+}
+
+#buttonsLogin a{
+  font-weight: 600;
+}
+
+#recuperaSenha{
+  text-align: center;
+}
+
+#formLogin{
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+  justify-content: center;
+  align-items: center;
+}
+
+#formLogin input{
+  width: 100%;
+}
+
+/* - - - - - - - - - - - - - - - - - - inputs - - - - - - - - - - - - - - - - - -*/
+#formCadastro input,
+#formCadastro select,
+#formCadastro textarea,
+.input,
+.select,
+.textarea{
+  color: var(--cor-roxo-modal);
+  border: 2px solid var(--cor-roxo-modal);
+  border-radius: 10px;
+  padding: 10px 25px;
+  background: transparent;
+}
+
+.input:active {
+  box-shadow: 2px 2px 15px var(--cor-roxo-modal) inset;
+}
+
+label {
+ color: rgba(166, 169, 184, 1)
+}
+
+.criarConta{
+  width: auto;
+  height: auto;
+}
+
+.input::placeholder {
+  color: #ffffff;
+}
+
+iframe{
+  width: 20vw;
+}
+
 /* - - - - - - - - - - - - - - - - - - - Contato - - - - - - - - - - - - - - - - - - */
 #formContato{
   display: flex;
@@ -227,8 +236,8 @@ label.required::after {
 }
 
 #msgAluno {
-  color: #8707ff;
-  border: 1px solid #8707ff;
+  color: var(--cor-roxo-modal);
+  border: 1px solid var(--cor-roxo-modal);
   border-radius: 10px;
   padding: 10px 25px;
   background: transparent;
@@ -244,8 +253,8 @@ label.required::after {
 
 #msgAluno::-webkit-file-upload-button {
   color: #fff;
-  background-color: #8707ff;
-  border: 2px solid #8707ff;
+  background-color: var(--cor-roxo-modal);
+  border: 2px solid var(--cor-roxo-modal);
   border-radius: 10px;
   padding: 5px 15px;
   cursor: pointer;
@@ -271,15 +280,15 @@ label.required::after {
   display: inline-block;
 }
 
-.Menu li a.active {
+#nav .Menu a{
+  font-size: 20px;
+  color: rgb(166, 169, 184);
+}
+
+#nav .Menu li a.active {
   color: white!important;
   font-size: 22px;
   font-weight: 200;
-}
-
-.Menu a{
-  font-size: 20px;
-  color: rgb(166, 169, 184);
 }
 
 .Menu li:last-child {
@@ -336,7 +345,7 @@ label.required::after {
 }
 
 .usuario button{
-  background: linear-gradient(90deg, #FF4040 0%, #AC00FD 96.52%);
+  background: linear-gradient(90deg, #FF4040 0%, var(--cor-destaque) 96.52%);
   border-radius: 6px;
   width: 98px;
   height: 44px;
@@ -351,44 +360,28 @@ label.required::after {
   color: white;
 }
 /* - - - - - - - - - - - - - - - - - - - MODAL - - - - - - - - - - - - - - - - - - - */
-/* .modal{
-  z-index: 2;
-}
-
-.modal-header, .modal-body{
-  background-color: #050718;
-  color: white;
-}
-
-.mmodal-header button .btn-close{
+.btn-close{
   display: flex;
-  width: 2vw;
-  height: 2vw;
-  padding: 0;
-}
-
-.modal-content button:hover{
-  border: 1px solid #AC00FD;
-}
-
-
-.modal-content button img{
-  width: 100%;
-  display: flex;
-  align-items: center;
   justify-content: center;
-  padding: 0;
+  align-items: center;
 }
 
-.formSignUp .btnSign{
-  background-color: #AC00FD;
-  color: white;
-  border: 0;
+.modalHeader{
+  padding: 3% 2% 3% 2%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: baseline;
 }
 
-.formSignUp .btnSign:hover{
-  background-color: #790eab;
-} */
+.modalHeader h1{
+  padding-right: 33%;
+}
+
+#divDireitaForm{
+
+}
+
 #divFormsTotal{
   display: flex;
   flex-direction: column;
@@ -396,16 +389,40 @@ label.required::after {
   padding-bottom: 1vw;
 }
 
-#divFormUnida{
-  display: flex;
-  gap: 7vw;
-}
-
-.subDivForm{
+#divFormUnida {
   display: flex;
   gap: 1vw;
+  flex-direction: column;
 }
 
+.divEsquerdaForm{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+#divDireitaForm{
+  display: flex;
+  gap: 12%;
+  align-items: center;
+  justify-content: center;
+}
+
+.subDivForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.divSexo{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.nasc{
+  width: 25%;
+}
 .col-12{
   display: flex;
   gap: 1vw;
@@ -419,8 +436,12 @@ label.required::after {
   padding-right: 50px;
 }
 /* - - - - - - - - - - - - - - - - - - - Body - - - - - - - - - - - - - - - - - - */
-body {
-  background-color: rgb(5, 7, 24);
+#bodyIndex,
+#bodyPLs,
+#bodyContato,
+#mainNovaConta,
+#bodyLogin{
+  background-color: var(--cor-fundo);
   margin: 2% 6% 0 6%;
   display: flex;
   flex-direction: column;
@@ -428,6 +449,7 @@ body {
 }
 
 section{
+  background-color: var(--cor-fundo);
   margin: 0 6% 0 6%;
 }
 
@@ -448,7 +470,7 @@ footer a{
 
 hr{
   margin: 0 auto;
-  background-color: #171820;
+  background-color: var(--cor-fundo);
   width: calc(100% - 200px);
   height: 0.5px;
 }

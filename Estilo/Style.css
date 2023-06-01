@@ -7,6 +7,10 @@
   list-style: none;
 }
 
+:root{
+  --cor-destaque: #AC00FD;
+}
+
 @font-face {
   font-family: 'Eina 03';
   src: url('Fonts/Eina03-Regular.ttf') format('truetype');
@@ -22,14 +26,10 @@ a, h1, h2, h3{
   font-size: 45px;
 }
 
-.PLIndex{
-  margin-left: 6%;
-}
-
 /* - - - - - - - - - - - - - - - - - - inputs - - - - - - - - - - - - - - - - - -*/
-#formCadastro input, 
-#formCadastro select, 
-#formCadastro textarea, 
+#formCadastro input,
+#formCadastro select,
+#formCadastro textarea,
 .input, 
 .select, 
 .textarea{
@@ -154,10 +154,28 @@ iframe{
   gap: 1vw;
 }
 
+#inputsNascimento{
+  display: flex;
+  gap: 1vw;
+}
+
 #divGenero{
   display: flex;
-  gap: 2vw;
+  gap: 1vw 2vw;
   padding-top: 5px;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  border: 2px solid #8707ff;
+}
+
+#gen{
+  width: 63%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 1vw;
 }
 
 #termos{
@@ -169,6 +187,19 @@ iframe{
   flex-direction: column;
   gap: 1vh;
 }
+/* Validação */
+.mensagem-erro {
+  display: none;
+  color: red;
+  margin-top: 5px;
+}
+
+label.required::after {
+  content: "*";
+  color: red;
+  margin-left: 4px;
+}
+
 /* - - - - - - - - - - - - - - - - - - - Contato - - - - - - - - - - - - - - - - - - */
 #formContato{
   display: flex;
@@ -222,16 +253,11 @@ iframe{
 
 /* - - - - - - - - - - - - - - - - - - - Header - - - - - - - - - - - - - - - - - - */
 #nav {
-  background-color: rgb(5, 7, 24);
+  background-color: #050718;
   margin-bottom: 10%;
   align-items: center;
   display: flex;
   justify-content: space-between;
-}
-
-.navActive{
-  color: white!important;
-  font-size: 20px;
 }
 
 .Menu {
@@ -245,7 +271,13 @@ iframe{
   display: inline-block;
 }
 
-.Menu li a{
+.Menu li a.active {
+  color: white!important;
+  font-size: 22px;
+  font-weight: 200;
+}
+
+.Menu a{
   font-size: 20px;
   color: rgb(166, 169, 184);
 }
@@ -318,7 +350,74 @@ iframe{
 .class{
   color: white;
 }
+/* - - - - - - - - - - - - - - - - - - - MODAL - - - - - - - - - - - - - - - - - - - */
+/* .modal{
+  z-index: 2;
+}
 
+.modal-header, .modal-body{
+  background-color: #050718;
+  color: white;
+}
+
+.mmodal-header button .btn-close{
+  display: flex;
+  width: 2vw;
+  height: 2vw;
+  padding: 0;
+}
+
+.modal-content button:hover{
+  border: 1px solid #AC00FD;
+}
+
+
+.modal-content button img{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.formSignUp .btnSign{
+  background-color: #AC00FD;
+  color: white;
+  border: 0;
+}
+
+.formSignUp .btnSign:hover{
+  background-color: #790eab;
+} */
+#divFormsTotal{
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+  padding-bottom: 1vw;
+}
+
+#divFormUnida{
+  display: flex;
+  gap: 7vw;
+}
+
+.subDivForm{
+  display: flex;
+  gap: 1vw;
+}
+
+.col-12{
+  display: flex;
+  gap: 1vw;
+}
+#divFormsTotal button{
+  margin-bottom: 0;
+}
+
+.modal-content .modal-header{
+  padding-left: 50px;
+  padding-right: 50px;
+}
 /* - - - - - - - - - - - - - - - - - - - Body - - - - - - - - - - - - - - - - - - */
 body {
   background-color: rgb(5, 7, 24);
@@ -328,13 +427,18 @@ body {
   position: relative;
 }
 
+section{
+  margin: 0 6% 0 6%;
+}
+
 /* - - - - - - - - - - - - - - - - - - - Footer - - - - - - - - - - - - - - - - - */
 footer{
-  color: #ffffff;
+  color: #790eab;
   bottom: 10px;
   position: fixed;
   width: 100%;
   left: 0;
+  z-index: 0;
 }
 
 footer a{
@@ -356,6 +460,12 @@ hr{
   justify-content: space-around;
   align-items: center;
   width: 100%;
+}
+
+#div1 p,
+#div2 p,
+#div3 p{
+  color:white;
 }
 
 #div1{

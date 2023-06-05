@@ -13,81 +13,57 @@
           <div id="divFormsTotal">
             <div id="divFormUnida">
               <!-- NOTE - INPUT NOME FORMULÁRIO -->
-              <div class="col-md-17 colInput">
-                <label for="validationCustom01" class="form-label required">Nome</label>
-                <input type="text" class="form-control" id="validationCustom01" placeholder="Nome Sobrenome"
+              <div class="boxForm">
+                <label class="labelForm required">Nome</label>
+                <input type="text" class="inputForm" id="nome" placeholder="Nome Sobrenome" onclick="validarNome()"
                   oninput="removeNumbers(this)" required>
-                <div class="valid-feedback">
-                  Looks good!
-                </div>
                 <div class="invalid-feedback">
                   Por favor, insira nome e sobrenome.
                 </div>
               </div>
               <!-- NOTE - INPUT NASCIMENTO FORMULÁRIO -->
-              <div class="nasc col-md-12 colInput">
-                <label for="validationCustom05" class="form-label required">Data de Nascimento</label>
-                <input type="date" class="form-control" id="validationCustom05" required>
-                <div class="valid-feedback">
-                  Looks good!
-                </div>
+              <div class="boxForm">
+                <label class="labelForm required">Data de Nascimento</label>
+                <input type="date" class="inputForm" id="data-nascimento" required onclick="validarDataNascimento()">
                 <div class="invalid-feedback">
                   Por favor, insira uma data de nascimento válida.
                 </div>
               </div>
               <!-- NOTE - INPUT TELEFONE FORMULÁRIO -->
-              <div class="col-md-17 colInput">
-                <label for="validationCustom02" class="form-label required">Telefone</label>
-                <input type="tel" class="form-control" id="validationCustom02" placeholder="XX XXXXXXXXX"
+              <div class="boxForm">
+                <label class="labelForm required">Telefone</label>
+                <input type="tel" class="inputForm" id="fone" placeholder="XX XXXXXXXXX"
                   pattern="\(\d{2}\) \d{4,5}-\d{4}" oninput="formatPhoneInput(this)" required>
-                <div class="valid-feedback">
-                  Looks good!
-                </div>
                 <div class="invalid-feedback">
                   Por favor, insira um número de telefone válido.
                 </div>
               </div>
               <!-- NOTE - INPUT SEXO FORMULÁRIO -->
-              <div class="divSexo col-12 colInput">
-                <label>Sexo</label>
-                <div id="checkSex">
-                  <div class="sex1">
-                    <div class="form-check">
-                      <input type="radio" class="form-check-input" id="validationFormCheck2" name="radio-stacked"
-                        required>
-                      <label class="form-check-label" for="validationFormCheck2">Masculino</label>
-                    </div>
-                    <div class="form-check">
-                      <input type="radio" class="form-check-input" id="validationFormCheck3" name="radio-stacked"
-                        required>
-                      <label class="form-check-label" for="validationFormCheck3">Feminino</label>
-                    </div>
+              <div class="boxForm">
+                <label class="labelForm required">Sexo</label>
+                <div class="inputChecks">
+                  <div>
+                    <input type="radio" class="inputForm" name="radio-stacked" required>
+                    <label>Masculino</label>
                   </div>
-                  <div class="sex2">
-                    <div class="form-check">
-                      <input type="radio" class="form-check-input" id="validationFormCheck5" name="radio-stacked"
-                        required>
-                      <label class="form-check-label" for="validationFormCheck5">Outro</label>
-                    </div>
-                    <div class="form-check mb-3 checkOutro">
-                      <input type="radio" class="form-check-input" id="validationFormCheck6" name="radio-stacked"
-                        required>
-                      <label class="form-check-label" for="validationFormCheck6">Prefiro não dizer</label>
-                    </div>
+                  <div>
+                    <input type="radio" name="radio-stacked" required>
+                    <label class="form-check-label">Feminino</label>
+                  </div>
+                  <div>
+                    <input type="radio" name="radio-stacked" required>
+                    <label class="form-check-label">Outro</label>
+                  </div>
+                  <div>
+                    <input type="radio" name="radio-stacked" required>
+                    <label class="form-check-label">Prefiro não dizer</label>
                   </div>
                 </div>
               </div>
               <!-- NOTE - INPUT EMAIL FORMULÁRIO -->
-              <div class="col-md-17 colInput">
-                <label for="validationCustom03" class="form-label required">E-mail</label>
-                <input type="email" class="form-control" id="validationCustom03" placeholder="nome@example.com"
-                  pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}\.?[a-zA-Z]{2,}" required>
-                <div class="valid-feedback">
-                  Looks good!
-                </div>
-                <div class="invalid-feedback">
-                  Por favor, insira um endereço de e-mail válido.
-                </div>
+              <div class="boxForm">
+                <label class="required">E-mail</label>
+                <input type="email" class="inputEmail" placeholder="nome@example.com" required>
               </div>
               <!-- NOTE - INPUT SENHA FORMULÁRIO -->
               <div class="col-md-17 colInput">

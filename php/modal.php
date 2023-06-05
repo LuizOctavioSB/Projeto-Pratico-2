@@ -9,67 +9,80 @@
       </div>
 
       <div class="modal-body p-5 pt-0 d-flex justify-content-center">
-        <form class="row g-3 needs-validation" novalidate action="../php/database.php" method="post">
+        <form id="myForm" class="needs-validation" novalidate action="modal.php" method="POST">
           <div id="divFormsTotal">
             <div id="divFormUnida">
               <!-- NOTE - INPUT NOME FORMULÁRIO -->
               <div class="boxForm">
                 <label class="labelForm required">Nome</label>
                 <input type="text" class="inputForm" id="nome" placeholder="Nome Sobrenome" onclick="validarNome()"
-                  oninput="removeNumbers(this)" required>
+                  oninput="removeNumbers(this)" required
+                  value="<?php echo htmlspecialchars($_POST['nome'] ?? '', ENT_QUOTES, 'UTF-8'); ?>">
                 <div class="invalid-feedback">
-                  Por favor, insira nome e sobrenome.
+                  Insira nome e sobrenome.
                 </div>
               </div>
               <!-- NOTE - INPUT NASCIMENTO FORMULÁRIO -->
               <div class="boxForm">
                 <label class="labelForm required">Data de Nascimento</label>
-                <input type="date" class="inputForm" id="data-nascimento" required onclick="validarDataNascimento()">
+                <input type="date" class="inputForm" id="data-nascimento" required onclick="validarDataNascimento()"
+                  value="<?php echo htmlspecialchars($_POST['data-nascimento'] ?? '', ENT_QUOTES, 'UTF-8'); ?>">
                 <div class="invalid-feedback">
-                  Por favor, insira uma data de nascimento válida.
+                  Insira uma data de nascimento válida.
                 </div>
               </div>
               <!-- NOTE - INPUT TELEFONE FORMULÁRIO -->
               <div class="boxForm">
                 <label class="labelForm required">Telefone</label>
                 <input type="tel" class="inputForm" id="fone" placeholder="XX XXXXXXXXX"
-                  pattern="\(\d{2}\) \d{4,5}-\d{4}" oninput="formatPhoneInput(this)" required>
+                  pattern="\(\d{2}\) \d{4,5}-\d{4}" oninput="formatPhoneInput(this)" required
+                  value="<?php echo htmlspecialchars($_POST['fone'] ?? '', ENT_QUOTES, 'UTF-8'); ?>">
                 <div class="invalid-feedback">
-                  Por favor, insira um número de telefone válido.
+                  Insira um número de telefone válido.
                 </div>
               </div>
               <!-- NOTE - INPUT SEXO FORMULÁRIO -->
               <div class="boxForm">
                 <label class="labelForm required">Sexo</label>
                 <div class="inputChecks">
-                  <div>
-                    <input type="radio" class="inputForm" name="radio-stacked" required>
-                    <label>Masculino</label>
+                  <div class="sex1">
+                    <div>
+                      <input type="radio" class="inputForm" name="radio-stacked">
+                      <label>Masculino</label>
+                    </div>
+                    <div>
+                      <input type="radio" name="radio-stacked">
+                      <label class="form-check-label">Feminino</label>
+                    </div>
                   </div>
-                  <div>
-                    <input type="radio" name="radio-stacked" required>
-                    <label class="form-check-label">Feminino</label>
-                  </div>
-                  <div>
-                    <input type="radio" name="radio-stacked" required>
-                    <label class="form-check-label">Outro</label>
-                  </div>
-                  <div>
-                    <input type="radio" name="radio-stacked" required>
-                    <label class="form-check-label">Prefiro não dizer</label>
+                  <div class="sex">
+                    <div>
+                      <input type="radio" name="radio-stacked">
+                      <label class="form-check-label">Outro</label>
+                    </div>
+                    <div>
+                      <input type="radio" name="radio-stacked">
+                      <label class="form-check-label">Prefiro não dizer</label>
+                    </div>
                   </div>
                 </div>
               </div>
               <!-- NOTE - INPUT EMAIL FORMULÁRIO -->
               <div class="boxForm">
-                <label class="required">E-mail</label>
-                <input type="email" class="inputEmail" placeholder="nome@example.com" required>
+                <label class="labelForm required">E-mail</label>
+                <input type="email" class="inputForm" placeholder="nome@example.com" required>
+                <div class="invalid-feedback">
+                  Insira um E-mail válido.
+                </div>
               </div>
               <!-- NOTE - INPUT SENHA FORMULÁRIO -->
-              <div class="col-md-17 colInput">
+              <div class="boxForm">
                 <div class="pass-field">
-                  <label for="senha" class="form-label required">Senha</label>
-                  <input type="password" class="form-control required" id="senha" placeholder="Senha" required>
+                  <label class="labelForm required">Senha</label>
+                  <input type="password" class="inputForm" id="senha" placeholder="Senha" required>
+                  <div class="invalid-feedback">
+                    Insira uma senha válida.
+                  </div>
                   <i class="fa-solid fa-eye"></i>
                 </div>
                 <div class="content">
@@ -130,8 +143,12 @@
                 </div>
               </div>
             </div>
+            <div>
+              <?
+              include "dadosInscricao.php"; ?>
+            </div>
             <div class="col-12">
-              <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary btnSign" type="submit" id="enviar">Sign
+              <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary btnSign" type="submit" id="submitButton">Sign
                 up</button>
             </div>
             <hr class="my-2">
@@ -155,111 +172,11 @@
               Sign up with GitHub
             </button>
         </form>
-        <script> <!-- ANCHOR - Validação de formulário -->
-          (() => {
-            'use strict'
-
-            // Fetch all the forms we want to apply custom Bootstrap validation styles to
-            const forms = document.querySelectorAll('.needs-validation')
-
-            // Loop over them and prevent submission
-            Array.from(forms).forEach(form => {
-              form.addEventListener('submit', event => {
-                if (!form.checkValidity()) {
-                  event.preventDefault()
-                  event.stopPropagation()
-                }
-
-                form.classList.add('was-validated')
-              }, false)
-            })
-          })()
-
-          function removeNumbers(input) {
-            input.value = input.value.replace(/[^A-Za-zÀ-ÖØ-öø-ÿ ]/g, '');
-          }
-
-          function formatPhoneInput(input) {
-            const value = input.value.replace(/\D/g, '');
-            const formattedValue = value
-              .replace(/^(\d{2})(\d)/g, '($1) $2')
-              .replace(/(\d)(\d{4})$/, '$1-$2');
-            input.value = formattedValue;
-          }
-
-          //  ANCHOR - Validação de senha
-          const passwordInput = document.querySelector(".pass-field input");
-          const eyeIcon = document.querySelector(".pass-field i");
-          const requirementList = document.querySelectorAll(".requirement-list li");
-
-          // An array of password requirements with corresponding
-          // regular expressions and index of the requirement list item
-          const requirements = [
-            { regex: /.{8,}/, index: 0 }, // Minimum of 8 characters
-            { regex: /[0-9]/, index: 1 }, // At least one number
-            { regex: /[a-z]/, index: 2 }, // At least one lowercase letter
-            { regex: /[^A-Za-z0-9]/, index: 3 }, // At least one special character
-            { regex: /[A-Z]/, index: 4 }, // At least one uppercase letter
-          ]
-
-          passwordInput.addEventListener("keyup", (e) => {
-            requirements.forEach(item => {
-              // Check if the password matches the requirement regex
-              const isValid = item.regex.test(e.target.value);
-              const requirementItem = requirementList[item.index];
-
-              // Updating class and icon of requirement item if requirement matched or not
-              if (isValid) {
-                requirementItem.classList.add("valid");
-                requirementItem.firstElementChild.className = "fa-solid fa-check";
-              } else {
-                requirementItem.classList.remove("valid");
-                requirementItem.firstElementChild.className = "fa-solid fa-circle";
-              }
-            });
-          });
-
-          eyeIcon.addEventListener("click", () => {
-            // Toggle the password input type between "password" and "text"
-            passwordInput.type = passwordInput.type === "password" ? "text" : "password";
-
-            // Update the eye icon class based on the password input type
-            eyeIcon.className = `fa-solid fa-eye${passwordInput.type === "password" ? "" : "-slash"}`;
-          });
-
-
-
-          // ANCHOR - Validação de senha 2
-          function validarSenha(senha) {
-            // Defina os requisitos de senha aqui
-            const requisitos = [
-              /(?=.*\d)/, // Deve conter pelo menos um dígito
-              /(?=.*[a-z])/, // Deve conter pelo menos uma letra minúscula
-              /(?=.*[A-Z])/, // Deve conter pelo menos uma letra maiúscula
-              /(?=.*\W)/, // Deve conter pelo menos um caractere especial
-              /^.{8,}$/ // Deve ter pelo menos 8 caracteres
-            ];
-
-            // Verifique se todos os requisitos foram atendidos
-            return requisitos.every(requisito => requisito.test(senha));
-          }
-
-          document.addEventListener('DOMContentLoaded', function () {
-            var forms = document.getElementsByClassName('needs-validation');
-            Array.prototype.filter.call(forms, function (form) {
-              form.addEventListener('submit', function (event) {
-                if (form.checkValidity() === false) {
-                  event.preventDefault();
-                  event.stopPropagation();
-                }
-                form.classList.add('was-validated');
-              }, false);
-            });
-          }, false);
-        </script>
       </div>
     </div>
   </div>
 </div>
 
 </div>
+
+<script src="Script/valida.js"></script>

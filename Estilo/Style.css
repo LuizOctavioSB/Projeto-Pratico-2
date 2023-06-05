@@ -80,30 +80,6 @@ ul {
   align-items: center;
 }
 
-#inputsNascimento {
-  display: flex;
-  gap: 1vw;
-}
-
-#divGenero {
-  display: flex;
-  gap: 1vw 2vw;
-  padding-top: 5px;
-  width: 100%;
-  flex-wrap: wrap;
-  justify-content: center;
-  border: 2px solid var(--cor-roxo-modal);
-}
-
-#gen {
-  width: 63%;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  gap: 1vw;
-}
-
 #termos {
   padding-bottom: 2vh;
 }
@@ -126,6 +102,95 @@ label.required::after {
   color: red;
   margin-left: 4px;
 }
+
+#formCadastro input,
+#formCadastro select,
+#formCadastro textarea,
+.inputForm,
+.input,
+.select,
+.textarea {
+  color: var(--cor-roxo-modal) !important;
+  border: 2px solid var(--cor-roxo-modal);
+  border-radius: 10px;
+  padding: 10px 25px;
+  background: transparent;
+}
+
+.input::placeholder {
+  color: #ffffff;
+}
+
+.input:active,
+.inputForm:active {
+  box-shadow: 2px 2px 15px var(--cor-roxo-modal) inset;
+}
+
+label {
+  color: rgba(166, 169, 184, 1)
+}
+
+.boxForm {
+  display: flex;
+  width: 45%;
+  flex-direction: column;
+}
+
+#divFormUnida {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.pass-field i {
+  top: 68% !important;
+  transform: translateY(-50%) translateX(-50%) !important;
+}
+
+.requirement-list li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5%;
+  font-size: 12px;
+}
+
+.requirement-list li i {
+  font-size: 8px !important;
+}
+
+.requirement-list li.valid i {
+  color: var(--cor-roxo-modal) !important;
+}
+
+.sex1 {
+  width: 40%;
+}
+
+.sex {
+  width: 60%;
+}
+
+.inputChecks {
+  display: flex;
+  flex-direction: row;
+}
+
+/* Estilizando o indicador do botão de rádio inválido */
+input[type="radio"].is-invalid+label:before {
+  /* Defina a cor de fundo do indicador do botão de rádio inválido */
+  background-color: #ff0000;
+  /* Defina a cor da borda do indicador do botão de rádio inválido */
+  border-color: #ff0000;
+}
+
+/* Estilizando o texto do botão de rádio inválido */
+input[type="radio"].is-invalid+label {
+  /* Defina a cor do texto do botão de rádio inválido */
+  color: #ff0000;
+}
+
 
 /* !SECTION - TELA CRIAR CONTA */
 
@@ -217,14 +282,6 @@ label.required::after {
   margin-left: 3% !important;
 }
 
-.requirement-list li {
-  list-style: none;
-  display: flex;
-  align-items: center;
-  margin-bottom: 0.5%;
-  font-size: 14px;
-}
-
 .requirement-list li i {
   color: #aaa;
   font-size: 10px;
@@ -258,34 +315,11 @@ label.required::after {
 }
 
 /* SECTION - INPUTS */
-#formCadastro input,
-#formCadastro select,
-#formCadastro textarea,
-.input,
-.select,
-.textarea {
-  color: var(--cor-roxo-modal);
-  border: 2px solid var(--cor-roxo-modal);
-  border-radius: 10px;
-  padding: 10px 25px;
-  background: transparent;
-}
 
-.input:active {
-  box-shadow: 2px 2px 15px var(--cor-roxo-modal) inset;
-}
-
-label {
-  color: rgba(166, 169, 184, 1)
-}
 
 .criarConta {
   width: auto;
   height: auto;
-}
-
-.input::placeholder {
-  color: #ffffff;
 }
 
 iframe {
@@ -483,13 +517,6 @@ iframe {
   padding-bottom: 1vw;
 }
 
-#divFormUnida {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
 .divEsquerdaForm {
   display: flex;
   width: 100%;
@@ -518,13 +545,6 @@ iframe {
 
 #validationCustom05 {
   width: 62%;
-}
-
-.colInput {
-  width: 48% !important;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
 }
 
 #checkSex {

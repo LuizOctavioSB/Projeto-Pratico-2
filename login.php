@@ -18,18 +18,19 @@
     <?php
     include "php/header.php";
     ?>
-
-    <form action="Index.php" method="get" id="form" id="login">
-      <div id="formLogin">
-        <input type="email" id="email" class="input" name="email" placeholder="Digite seu e-mail" required>
-        <input type="password" id="senha" class="input" name="senha" placeholder="Digite sua senha" required>
-        <div id="buttonsLogin">
-          <button><a>Login</a></button>
-          <button><a href="NovaConta.php">Criar conta<a></button>
+    <main>
+      <form action="Index.php" method="get" id="form" id="login">
+        <div id="formLogin">
+          <input type="email" id="email" class="input" name="email" placeholder="Digite seu e-mail" required>
+          <input type="password" id="senha" class="input" name="senha" placeholder="Digite sua senha" required>
+          <div id="buttonsLogin">
+            <button><a>Login</a></button>
+            <button><a href="NovaConta.php">Criar conta<a></button>
+          </div>
         </div>
-      </div>
-    </form>
-    <a id="recuperaSenha" href="RecuperaSenha.php">Esqueceu sua senha?</a>
+      </form>
+      <a id="recuperaSenha" href="RecuperaSenha.php">Esqueceu sua senha?</a>
+    </main>
     <?php
     include "php/footer.php";
     ?>

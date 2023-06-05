@@ -17,23 +17,26 @@
     <?php
     include "php/header.php";
     ?>
-    <section class="PLIndex">
-      <!-- espaço para as 4 playlists mais acessadas -->
-      <h1 id="h1Index">Playlists mais<br>acessadas</h1>
-      <ul>
-        <li><iframe style="border-radius:12px"
-            src="https://open.spotify.com/embed/playlist/37i9dQZF1DX0FOF1IUWK1W?utm_source=generator" width="100%"
-            height="352" frameBorder="0" allowfullscreen=""
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-        </li>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
-    </section>
-    <section>
-      <!-- espaço para ultima playlist ouvida -->
-    </section>
+    <main>
+      <section class="PLIndex">
+        <!-- espaço para as 4 playlists mais acessadas -->
+        <h1 id="h1Index">Playlists mais<br>acessadas</h1>
+        <ul>
+          <li><iframe style="border-radius:12px"
+              src="https://open.spotify.com/embed/playlist/37i9dQZF1DX0FOF1IUWK1W?utm_source=generator" width="100%"
+              height="352" frameBorder="0" allowfullscreen=""
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"></iframe>
+          </li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </section>
+      <section>
+        <!-- espaço para ultima playlist ouvida -->
+      </section>
+    </main>
     <?php include "php/footer.php"; ?>
   </body>
 

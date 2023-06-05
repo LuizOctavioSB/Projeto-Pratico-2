@@ -8,8 +8,8 @@
   <ul class="Menu" id="menuNav">
     <li <?php if (getCurrentPage() == "index.php")
       echo 'class="atual"'; ?>><a href="index.php">Home</a></li>
-    <li <?php if (getCurrentPage() == "pesquisa.php")
-      echo 'class="atual"'; ?>><a href="pesquisa.php">Pesquisar</a></li>
+    <!-- <li <?php if (getCurrentPage() == "pesquisa.php")
+      echo 'class="atual"'; ?>><a href="pesquisa.php">Pesquisar</a></li> -->
     <li <?php if (getCurrentPage() == "playlists.php")
       echo 'class="atual"'; ?>><a href="playlists.php">Playlists</a>
     </li>

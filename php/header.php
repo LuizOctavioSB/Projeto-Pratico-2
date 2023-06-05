@@ -5,16 +5,18 @@
     <a href="index.php">Silksong</a>
   </div>
 
-  <ul class="Menu">
-    <li <?php if (getCurrentPage() === 'index.php')
-      echo 'class="active"'; ?>><a href="index.php">Home</a></li>
-    <li <?php if (getCurrentPage() === 'pesquisa.php')
-      echo 'class="active"'; ?>><a href="pesquisa.php">Pesquisar</a></li>
-    <li <?php if (getCurrentPage() === 'playlists.php')
-      echo 'class="active"'; ?>><a href="playlists.php">Playlists</a>
+  <ul class="Menu" id="menuNav">
+    <li <?php if (getCurrentPage() == "index.php")
+      echo 'class="atual"'; ?>><a href="index.php">Home</a></li>
+    <li <?php if (getCurrentPage() == "pesquisa.php")
+      echo 'class="atual"'; ?>><a href="pesquisa.php">Pesquisar</a></li>
+    <li <?php if (getCurrentPage() == "playlists.php")
+      echo 'class="atual"'; ?>><a href="playlists.php">Playlists</a>
     </li>
-    <li <?php if (getCurrentPage() === 'contato.php')
-      echo 'class="active"'; ?>><a href="contato.php">Contato</a></li>
+    <li <?php if (getCurrentPage() == "contato.php")
+      echo 'class="atual"'; ?>><a href="contato.php">Contato</a>
+    </li>
+
   </ul>
 
   <div class="usuario">

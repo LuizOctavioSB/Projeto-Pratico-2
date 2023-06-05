@@ -1,7 +1,7 @@
-/* - - - - - - - - - - - - - - - - - - Geral - - - - - - - - - - - - - - - - - -*/
+/* SECTION - GERAL */
 * {
   font-family: 'Eina 03', sans-serif;
-  text-decoration: none!important;
+  text-decoration: none !important;
   padding: 0;
   margin: 0;
   list-style: none;
@@ -14,7 +14,7 @@
   font-style: normal;
 }
 
-:root{
+:root {
   --cor-fundo: #050718;
   --cor-destaque: #AC00FD;
   --cor-roxo-modal: #8707ff;
@@ -25,59 +25,67 @@
 #bodyPLs h1,
 #divPai h3,
 #div1 a,
-#bodyLogin a
-{
+#bodyLogin a {
   color: white;
 }
 
-#h1Index{
+#h1Index {
   font-size: 45px;
 }
 
-/* - - - - - - - - - - - - - - - - - - - Tela criar conta - - - - - - - - - - - - - - */
-#mainNovaConta{
+dl,
+ol,
+ul {
+  margin-top: 0;
+  margin-bottom: 0px !important;
+}
+
+ol,
+ul {
+  padding-left: 0px !important;
+}
+
+/* !SECTION - GERAL */
+
+/* SECTION - TELA CRIAR CONTA */
+#mainNovaConta {
   display: flex;
   justify-content: center;
 }
 
-#parteSuperiorForm{
+#parteSuperiorForm {
   display: flex;
   align-items: flex-start;
   gap: 4vw;
   margin-bottom: 2vh;
 }
 
-#parteLateral{
+#parteLateral {
   display: flex;
   flex-direction: column;
   gap: 1vh;
 }
 
-.divs{
+.divs {
   display: flex;
   flex-direction: column;
   gap: 0.5vh;
   width: 17vw;
 }
 
-#parteLateralDireita{
+#parteLateralDireita {
   display: flex;
   flex-direction: column;
   gap: 1vh;
   align-items: center;
 }
 
-#inputsNascimento{
+#inputsNascimento {
   display: flex;
   gap: 1vw;
 }
 
-#inputsNascimento{
-  display: flex;
-  gap: 1vw;
-}
-
-#divGenero{
+#divGenero {
   display: flex;
   gap: 1vw 2vw;
   padding-top: 5px;
@@ -87,7 +95,7 @@
   border: 2px solid var(--cor-roxo-modal);
 }
 
-#gen{
+#gen {
   width: 63%;
   display: flex;
   justify-content: center;
@@ -96,15 +104,16 @@
   gap: 1vw;
 }
 
-#termos{
+#termos {
   padding-bottom: 2vh;
 }
 
-#submitNovaConta{
+#submitNovaConta {
   display: flex;
   flex-direction: column;
   gap: 1vh;
 }
+
 /* Validação */
 .mensagem-erro {
   display: none;
@@ -118,18 +127,20 @@ label.required::after {
   margin-left: 4px;
 }
 
+/* !SECTION - TELA CRIAR CONTA */
+
 /* - - - - - - - - - - - - - - - - - - - Formulario - - - - - - - - - - - - - - - - - - */
-#form{
+#form {
   display: flex;
   justify-content: center;
 }
 
-#form li{
-  margin-bottom:  5%;
+#form li {
+  margin-bottom: 5%;
 }
 
 #buttonsLogin,
-#formContato button{
+#formContato button {
   gap: 10px;
   margin-left: 10px;
   display: flex;
@@ -139,7 +150,7 @@ label.required::after {
 
 #buttonsLogin button,
 #listaContato button,
-#formCadastro button{
+#formCadastro button {
   background: linear-gradient(90deg, #FF4040 0%, var(--cor-destaque) 96.52%);
   border-radius: 6px;
   width: 98px;
@@ -150,19 +161,19 @@ label.required::after {
   transition: background-color 0.3s ease;
 }
 
-#buttonsLogin button:active{
+#buttonsLogin button:active {
   transform: translateY(2px);
 }
 
-#buttonsLogin a{
+#buttonsLogin a {
   font-weight: 600;
 }
 
-#recuperaSenha{
+#recuperaSenha {
   text-align: center;
 }
 
-#formLogin{
+#formLogin {
   display: flex;
   flex-direction: column;
   gap: 2vh;
@@ -170,17 +181,89 @@ label.required::after {
   align-items: center;
 }
 
-#formLogin input{
+#formLogin input {
   width: 100%;
 }
 
-/* - - - - - - - - - - - - - - - - - - inputs - - - - - - - - - - - - - - - - - -*/
+/* ANCHOR - INPUT SENHA */
+.wrapper {
+  height: 22vh;
+}
+
+.pass-field {
+  position: relative;
+}
+
+.pass-field input {
+  outline: none;
+}
+
+.pass-field i {
+  right: 1.7vw;
+  top: 73%;
+  font-size: 1.2rem;
+  color: #999;
+  cursor: pointer;
+  position: absolute;
+  transform: translateY(-50%);
+}
+
+.content p {
+  color: #333;
+  margin-bottom: 1%;
+}
+
+#ulForm {
+  margin-left: 3% !important;
+}
+
+.requirement-list li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5%;
+  font-size: 14px;
+}
+
+.requirement-list li i {
+  color: #aaa;
+  font-size: 10px;
+}
+
+.requirement-list li.valid i {
+  color: #4285F4;
+}
+
+.requirement-list li span {
+  margin-left: 2%;
+  color: #333;
+}
+
+.requirement-list li.valid span {
+  color: #999;
+}
+
+#formInputSenha {
+  position: relative;
+  z-index: 0;
+}
+
+.form-control:invalid,
+.form-control:valid {
+  background-image: none !important;
+}
+
+.pass-field i {
+  right: 5% !important;
+}
+
+/* SECTION - INPUTS */
 #formCadastro input,
 #formCadastro select,
 #formCadastro textarea,
 .input,
 .select,
-.textarea{
+.textarea {
   color: var(--cor-roxo-modal);
   border: 2px solid var(--cor-roxo-modal);
   border-radius: 10px;
@@ -193,10 +276,10 @@ label.required::after {
 }
 
 label {
- color: rgba(166, 169, 184, 1)
+  color: rgba(166, 169, 184, 1)
 }
 
-.criarConta{
+.criarConta {
   width: auto;
   height: auto;
 }
@@ -205,12 +288,14 @@ label {
   color: #ffffff;
 }
 
-iframe{
+iframe {
   width: 20vw;
 }
 
-/* - - - - - - - - - - - - - - - - - - - Contato - - - - - - - - - - - - - - - - - - */
-#formContato{
+/* !SECTION - INPUTS */
+
+/* SECTION - PAGINA CONTATO */
+#formContato {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -218,17 +303,17 @@ iframe{
   gap: 1vh;
 }
 
-#listaContato{
+#listaContato {
   display: flex;
   flex-direction: column;
   gap: 1vh;
 }
 
-#listaContato input{
+#listaContato input {
   width: 19vw;
 }
 
-#listaContato #msg{
+#listaContato #msg {
   height: 10vh;
   white-space: pre-wrap;
   word-wrap: break-word;
@@ -260,7 +345,9 @@ iframe{
   cursor: pointer;
 }
 
-/* - - - - - - - - - - - - - - - - - - - Header - - - - - - - - - - - - - - - - - - */
+/* !SECTION - PAGINA CONTATO */
+
+/* SECTION - HEADER */
 #nav {
   background-color: #050718;
   margin-bottom: 10%;
@@ -280,15 +367,15 @@ iframe{
   display: inline-block;
 }
 
-#nav .Menu a{
+#nav .Menu a {
   font-size: 20px;
   color: rgb(166, 169, 184);
 }
 
-#nav .Menu li a.active {
-  color: white!important;
-  font-size: 22px;
-  font-weight: 200;
+.atual a {
+  color: white !important;
+  font-size: 22px !important;
+  font-weight: 200 !important;
 }
 
 .Menu li:last-child {
@@ -322,29 +409,29 @@ iframe{
   margin-right: 20%;
 }
 
-#aLogo{
+#aLogo {
   margin-right: 12%;
 }
 
-#navLogin{
+#navLogin {
   margin: 3% 0% 4%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-#navLogin img{
+#navLogin img {
   width: 80%;
 }
 
-#navLogin a{
+#navLogin a {
   font-size: 79px;
   font-weight: bold;
   align-items: center;
   display: inline-flex;
 }
 
-.usuario button{
+.usuario button {
   background: linear-gradient(90deg, #FF4040 0%, var(--cor-destaque) 96.52%);
   border-radius: 6px;
   width: 98px;
@@ -356,17 +443,20 @@ iframe{
   font-weight: 600;
 }
 
-.class{
+.class {
   color: white;
 }
-/* - - - - - - - - - - - - - - - - - - - MODAL - - - - - - - - - - - - - - - - - - - */
-.btn-close{
+
+/* !SECTION - HEADER */
+
+/* SECTION - MODAL */
+.btn-close {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.modalHeader{
+.modalHeader {
   padding: 3% 2% 3% 2%;
   display: flex;
   flex-direction: row;
@@ -374,15 +464,19 @@ iframe{
   align-items: baseline;
 }
 
-.modalHeader h1{
+.modalHeader h1 {
   padding-right: 33%;
 }
 
-#divDireitaForm{
-
+#divDireitaForm {
+  display: flex;
+  width: 50%;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
 }
 
-#divFormsTotal{
+#divFormsTotal {
   display: flex;
   flex-direction: column;
   gap: 1vw;
@@ -390,57 +484,95 @@ iframe{
 }
 
 #divFormUnida {
+  width: 100%;
   display: flex;
-  gap: 1vw;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
-.divEsquerdaForm{
+.divEsquerdaForm {
   display: flex;
   width: 100%;
   justify-content: center;
 }
 
-#divDireitaForm{
-  display: flex;
-  gap: 12%;
-  align-items: center;
-  justify-content: center;
-}
-
 .subDivForm {
+  width: 52%;
+  gap: 1vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
 }
 
-.divSexo{
+.subDivForm> :nth-child(2) {
+  margin-top: 6.1%;
+}
+
+.subDivForm2 {
+  width: 45% !important;
+}
+
+.checkOutro {
+  width: 106%;
+}
+
+#validationCustom05 {
+  width: 62%;
+}
+
+.colInput {
+  width: 48% !important;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+#checkSex {
+  display: flex;
+  width: 100%;
+  gap: 3%;
+}
+
+.divSexo {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  width: 100%;
 }
 
-.nasc{
-  width: 25%;
+.col-md-17 {
+  width: 100%;
 }
-.col-12{
+
+.nasc {
+  width: 100%;
+}
+
+.col-12 {
   display: flex;
-  gap: 1vw;
 }
-#divFormsTotal button{
+
+#divFormsTotal button {
   margin-bottom: 0;
 }
 
-.modal-content .modal-header{
+.modal-content {
+  width: 85% !important;
+}
+
+.modal-content .modal-header {
   padding-left: 50px;
   padding-right: 50px;
 }
-/* - - - - - - - - - - - - - - - - - - - Body - - - - - - - - - - - - - - - - - - */
+
+/* !SECTION - MODAL */
+
+/* SECTION - BODY */
 #bodyIndex,
 #bodyPLs,
 #bodyContato,
 #mainNovaConta,
-#bodyLogin{
+#bodyLogin {
   background-color: var(--cor-fundo);
   margin: 2% 6% 0 6%;
   display: flex;
@@ -448,13 +580,15 @@ iframe{
   position: relative;
 }
 
-section{
+section {
   background-color: var(--cor-fundo);
   margin: 0 6% 0 6%;
 }
 
-/* - - - - - - - - - - - - - - - - - - - Footer - - - - - - - - - - - - - - - - - */
-footer{
+/* !SECTION - BODY */
+
+/* SECTION - FOOTER */
+footer {
   color: #790eab;
   bottom: 10px;
   position: fixed;
@@ -463,19 +597,19 @@ footer{
   z-index: 0;
 }
 
-footer a{
+footer a {
   text-decoration: none;
   color: #ffffff;
 }
 
-hr{
+hr {
   margin: 0 auto;
   background-color: var(--cor-fundo);
   width: calc(100% - 200px);
   height: 0.5px;
 }
 
-#divPai{
+#divPai {
   margin-top: 1vh;
   display: flex;
   flex-direction: row;
@@ -486,37 +620,37 @@ hr{
 
 #div1 p,
 #div2 p,
-#div3 p{
-  color:white;
+#div3 p {
+  color: white;
 }
 
-#div1{
+#div1 {
   display: flex;
   flex-direction: column;
   gap: 3vh;
 }
 
-#div1 h3{
+#div1 h3 {
   font-size: 2vw;
 }
 
-#paginasFooter{
+#paginasFooter {
   display: flex;
   list-style: none;
   gap: 0.5vw;
 }
 
-#div1 p{
+#div1 p {
   font-size: 0.8vw;
 }
 
-#div2{
+#div2 {
   display: flex;
   flex-direction: column;
   gap: 3vh;
 }
 
-.infoFooter{
+.infoFooter {
   display: flex;
   gap: 1vw;
   align-items: center;
@@ -570,3 +704,5 @@ hr{
   top: -35px;
   left: 0;
 }
+
+/* !SECTION - FOOTER */

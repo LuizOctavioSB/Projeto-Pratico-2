@@ -8,157 +8,176 @@
             src="Midias/btnclose.svg"></button>
       </div>
 
-      <div class="modal-body p-5 pt-0">
+      <div class="modal-body p-5 pt-0 d-flex justify-content-center">
         <form class="row g-3 needs-validation" novalidate action="../php/database.php" method="post">
           <div id="divFormsTotal">
             <div id="divFormUnida">
-              <div id="divEsquerdaForm">
-                <div class="subDivForm">
-                  <div class="col-md-7">
-                    <label for="validationCustom01" class="form-label required">Nome</label>
-                    <input type="text" class="form-control" id="validationCustom01" placeholder="Nome Sobrenome"
-                      oninput="removeNumbers(this)" required>
-                    <div class="valid-feedback">
-                      Looks good!
-                    </div>
-                    <div class="invalid-feedback">
-                      Por favor, insira nome e sobrenome.
-                    </div>
-                  </div>
-                  <div class="col-md-7">
-                    <label for="validationCustom02" class="form-label required">Telefone</label>
-                    <input type="tel" class="form-control" id="validationCustom02" placeholder="XX XXXXXXXXX"
-                      pattern="\(\d{2}\) \d{4,5}-\d{4}" oninput="formatPhoneInput(this)" required>
-                    <div class="valid-feedback">
-                      Looks good!
-                    </div>
-                    <div class="invalid-feedback">
-                      Por favor, insira um número de telefone válido.
-                    </div>
-                  </div>
+              <!-- NOTE - INPUT NOME FORMULÁRIO -->
+              <div class="col-md-17 colInput">
+                <label for="validationCustom01" class="form-label required">Nome</label>
+                <input type="text" class="form-control" id="validationCustom01" placeholder="Nome Sobrenome"
+                  oninput="removeNumbers(this)" required>
+                <div class="valid-feedback">
+                  Looks good!
                 </div>
-                <div class="subDivForm">
-                  <div class="col-md-7">
-                    <label for="validationCustom03" class="form-label required">E-mail</label>
-                    <input type="email" class="form-control" id="validationCustom03" placeholder="nome@example.com"
-                      pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}\.?[a-zA-Z]{2,}" required>
-                    <div class="valid-feedback">
-                      Looks good!
+                <div class="invalid-feedback">
+                  Por favor, insira nome e sobrenome.
+                </div>
+              </div>
+              <!-- NOTE - INPUT NASCIMENTO FORMULÁRIO -->
+              <div class="nasc col-md-12 colInput">
+                <label for="validationCustom05" class="form-label required">Data de Nascimento</label>
+                <input type="date" class="form-control" id="validationCustom05" required>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+                <div class="invalid-feedback">
+                  Por favor, insira uma data de nascimento válida.
+                </div>
+              </div>
+              <!-- NOTE - INPUT TELEFONE FORMULÁRIO -->
+              <div class="col-md-17 colInput">
+                <label for="validationCustom02" class="form-label required">Telefone</label>
+                <input type="tel" class="form-control" id="validationCustom02" placeholder="XX XXXXXXXXX"
+                  pattern="\(\d{2}\) \d{4,5}-\d{4}" oninput="formatPhoneInput(this)" required>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+                <div class="invalid-feedback">
+                  Por favor, insira um número de telefone válido.
+                </div>
+              </div>
+              <!-- NOTE - INPUT SEXO FORMULÁRIO -->
+              <div class="divSexo col-12 colInput">
+                <label>Sexo</label>
+                <div id="checkSex">
+                  <div class="sex1">
+                    <div class="form-check">
+                      <input type="radio" class="form-check-input" id="validationFormCheck2" name="radio-stacked"
+                        required>
+                      <label class="form-check-label" for="validationFormCheck2">Masculino</label>
                     </div>
-                    <div class="invalid-feedback">
-                      Por favor, insira um endereço de e-mail válido.
+                    <div class="form-check">
+                      <input type="radio" class="form-check-input" id="validationFormCheck3" name="radio-stacked"
+                        required>
+                      <label class="form-check-label" for="validationFormCheck3">Feminino</label>
                     </div>
                   </div>
-                  <div class="col-md-7"> <!-- STUB - Fazer validação da Senha contra SQL Injection -->
-                    <label for="validationCustom04" class="form-label required">Senha:</label>
-                    <input type="password" class="form-control" id="validationCustom04" name="senha" placeholder="senha"
-                      required>
+                  <div class="sex2">
+                    <div class="form-check">
+                      <input type="radio" class="form-check-input" id="validationFormCheck5" name="radio-stacked"
+                        required>
+                      <label class="form-check-label" for="validationFormCheck5">Outro</label>
+                    </div>
+                    <div class="form-check mb-3 checkOutro">
+                      <input type="radio" class="form-check-input" id="validationFormCheck6" name="radio-stacked"
+                        required>
+                      <label class="form-check-label" for="validationFormCheck6">Prefiro não dizer</label>
+                    </div>
                   </div>
                 </div>
               </div>
-
-              <div id="divDireitaForm">
-                <div class="divSexo" class="col-12">
-                  <label class="form-label">Sexo</label>
-                  <div class="form-check">
-                    <input type="radio" class="form-check-input" id="validationFormCheck2" name="radio-stacked"
-                      required>
-                    <label class="form-check-label" for="validationFormCheck2">Masculino</label>
+              <!-- NOTE - INPUT EMAIL FORMULÁRIO -->
+              <div class="col-md-17 colInput">
+                <label for="validationCustom03" class="form-label required">E-mail</label>
+                <input type="email" class="form-control" id="validationCustom03" placeholder="nome@example.com"
+                  pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}\.?[a-zA-Z]{2,}" required>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+                <div class="invalid-feedback">
+                  Por favor, insira um endereço de e-mail válido.
+                </div>
+              </div>
+              <!-- NOTE - INPUT SENHA FORMULÁRIO -->
+              <div class="col-md-17 colInput">
+                <div class="pass-field">
+                  <label for="senha" class="form-label required">Senha</label>
+                  <input type="password" class="form-control required" id="senha" placeholder="Senha" required>
+                  <i class="fa-solid fa-eye"></i>
+                </div>
+                <div class="content">
+                  <p>A senha deve conter:</p>
+                  <ul class="requirement-list" id="ulForm">
+                    <li><i class="fa-solid fa-circle"></i><span>Pelo menos 8 caracteres</span></li>
+                    <li><i class="fa-solid fa-circle"></i><span>Pelo menos 1 número (0-9)</span></li>
+                    <li><i class="fa-solid fa-circle"></i><span>Pelo menos 1 letra minúscula (a-z)</span></li>
+                    <li><i class="fa-solid fa-circle"></i><span>Pelo menos 1 símbolo especial (!-$)</span></li>
+                    <li><i class="fa-solid fa-circle"></i><span>Pelo menos 1 letra maiúscula (A-Z)</span></li>
+                  </ul>
+                  <div id="senha-feedback" class="invalid-feedback">
+                    A senha deve atender aos seguintes requisitos:
+                    <ul class="password-requirements">
+                      <li>Pelo menos 8 caracteres</li>
+                      <li>Pelo menos 1 número (0-9)</li>
+                      <li>Pelo menos 1 letra minúscula (a-z)</li>
+                      <li>Pelo menos 1 símbolo especial (!-$)</li>
+                      <li>Pelo menos 1 letra maiúscula (A-Z)</li>
+                    </ul>
                   </div>
+                </div>
+              </div>
+              <!-- NOTE - INPUT CHECKBOX TERMOS FORMULÁRIO -->
+              <div id="termosForms">
+                <div class="col-12">
                   <div class="form-check">
-                    <input type="radio" class="form-check-input" id="validationFormCheck3" name="radio-stacked"
-                      required>
-                    <label class="form-check-label" for="validationFormCheck3">Feminino</label>
-                  </div>
-                  <div class="form-check">
-                    <input type="radio" class="form-check-input" id="validationFormCheck4" name="radio-stacked"
-                      required>
-                    <label class="form-check-label" for="validationFormCheck4">Não binário</label>
-                  </div>
-                  <div class="form-check">
-                    <input type="radio" class="form-check-input" id="validationFormCheck5" name="radio-stacked"
-                      required>
-                    <label class="form-check-label" for="validationFormCheck5">Outro</label>
-                  </div>
-                  <div class="form-check mb-3">
-                    <input type="radio" class="form-check-input" id="validationFormCheck6" name="radio-stacked"
-                      required>
-                    <label class="form-check-label" for="validationFormCheck6">Prefiro não dizer</label>
+                    <input class="form-check-input" type="checkbox" value="">
+                    <label>
+                      Não quero receber mensagens de marketing do Silksong.
+                    </label>
                   </div>
                 </div>
 
-                <div class="nasc" class="col-md-12">
-                  <label for="validationCustom05" class="form-label required">Data de Nascimento</label>
-                  <input type="date" class="form-control" id="validationCustom05" required>
-                  <div class="valid-feedback">
-                    Looks good!
-                  </div>
-                  <div class="invalid-feedback">
-                    Por favor, insira uma data de nascimento válida.
+                <div class="col-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck1">
+                    <label for="invalidCheck">
+                      Compartilhar meus dados cadastrais com os provedores de conteúdo do Silksong para fins de
+                      marketing.
+                    </label>
+                    <div class="invalid-feedback">
+                      You must agree before submitting.
+                    </div>
                   </div>
                 </div>
 
+                <div class="col-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                    <label class="form-check-label" for="invalidCheck">
+                      Eu concordo com os Termos e Condicões de Uso do Silksong.
+                    </label>
+                    <div class="invalid-feedback">
+                      Você precisa aceitar os termos para prosseguir.
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-            <div id="termosForms">
-              <div class="col-12">
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="">
-                  <label class="form-check-label">
-                    Não quero receber mensagens de marketing do Silksong.
-                  </label>
-                </div>
-              </div>
-
-              <div class="col-12">
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="invalidCheck1">
-                  <label class="form-check-label" for="invalidCheck">
-                    Compartilhar meus dados cadastrais com os provedores de conteúdo do Silksong para fins de
-                    marketing.
-                  </label>
-                  <div class="invalid-feedback">
-                    You must agree before submitting.
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-12">
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
-                  <label class="form-check-label" for="invalidCheck">
-                    Eu concordo com os Termos e Condicões de Uso do Silksong.
-                  </label>
-                  <div class="invalid-feedback">
-                    Você precisa aceitar os termos para prosseguir.
-                  </div>
-                </div>
-              </div>
+            <div class="col-12">
+              <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary btnSign" type="submit" id="enviar">Sign
+                up</button>
             </div>
-          </div>
-          <div class="col-12">
-            <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary btnSign" type="submit">Sign up</button>
-          </div>
-          <hr class="my-2">
-          <h2 class="fs-5 fw-bold mb-2">Ou entre com uma das contas a baixo</h2>
-          <button class="w-100 py-2 mb-1 btn btn-outline-secondary rounded-3" type="submit">
-            <svg class="bi me-1" width="16" height="16">
-              <use xlink:href="#twitter"></use>
-            </svg>
-            Sign up with Twitter
-          </button>
-          <button class="w-100 py-2 mb-1 btn btn-outline-primary rounded-3" type="submit">
-            <svg class="bi me-1" width="16" height="16">
-              <use xlink:href="#facebook"></use>
-            </svg>
-            Sign up with Facebook
-          </button>
-          <button class="w-100 py-2 mb-1 btn btn-outline-secondary rounded-3" type="submit">
-            <svg class="bi me-1" width="16" height="16">
-              <use xlink:href="#github"></use>
-            </svg>
-            Sign up with GitHub
-          </button>
+            <hr class="my-2">
+            <h2 class="fs-5 fw-bold mb-2">Ou entre com uma das contas a baixo</h2>
+            <button class="w-100 py-2 mb-1 btn btn-outline-secondary rounded-3" type="submit">
+              <svg class="bi me-1" width="16" height="16">
+                <use xlink:href="#twitter"></use>
+              </svg>
+              Sign up with Twitter
+            </button>
+            <button class="w-100 py-2 mb-1 btn btn-outline-primary rounded-3" type="submit">
+              <svg class="bi me-1" width="16" height="16">
+                <use xlink:href="#facebook"></use>
+              </svg>
+              Sign up with Facebook
+            </button>
+            <button class="w-100 py-2 mb-1 btn btn-outline-secondary rounded-3" type="submit">
+              <svg class="bi me-1" width="16" height="16">
+                <use xlink:href="#github"></use>
+              </svg>
+              Sign up with GitHub
+            </button>
         </form>
         <script> <!-- ANCHOR - Validação de formulário -->
           (() => {
@@ -192,6 +211,75 @@
             input.value = formattedValue;
           }
 
+          //  ANCHOR - Validação de senha
+          const passwordInput = document.querySelector(".pass-field input");
+          const eyeIcon = document.querySelector(".pass-field i");
+          const requirementList = document.querySelectorAll(".requirement-list li");
+
+          // An array of password requirements with corresponding
+          // regular expressions and index of the requirement list item
+          const requirements = [
+            { regex: /.{8,}/, index: 0 }, // Minimum of 8 characters
+            { regex: /[0-9]/, index: 1 }, // At least one number
+            { regex: /[a-z]/, index: 2 }, // At least one lowercase letter
+            { regex: /[^A-Za-z0-9]/, index: 3 }, // At least one special character
+            { regex: /[A-Z]/, index: 4 }, // At least one uppercase letter
+          ]
+
+          passwordInput.addEventListener("keyup", (e) => {
+            requirements.forEach(item => {
+              // Check if the password matches the requirement regex
+              const isValid = item.regex.test(e.target.value);
+              const requirementItem = requirementList[item.index];
+
+              // Updating class and icon of requirement item if requirement matched or not
+              if (isValid) {
+                requirementItem.classList.add("valid");
+                requirementItem.firstElementChild.className = "fa-solid fa-check";
+              } else {
+                requirementItem.classList.remove("valid");
+                requirementItem.firstElementChild.className = "fa-solid fa-circle";
+              }
+            });
+          });
+
+          eyeIcon.addEventListener("click", () => {
+            // Toggle the password input type between "password" and "text"
+            passwordInput.type = passwordInput.type === "password" ? "text" : "password";
+
+            // Update the eye icon class based on the password input type
+            eyeIcon.className = `fa-solid fa-eye${passwordInput.type === "password" ? "" : "-slash"}`;
+          });
+
+
+
+          // ANCHOR - Validação de senha 2
+          function validarSenha(senha) {
+            // Defina os requisitos de senha aqui
+            const requisitos = [
+              /(?=.*\d)/, // Deve conter pelo menos um dígito
+              /(?=.*[a-z])/, // Deve conter pelo menos uma letra minúscula
+              /(?=.*[A-Z])/, // Deve conter pelo menos uma letra maiúscula
+              /(?=.*\W)/, // Deve conter pelo menos um caractere especial
+              /^.{8,}$/ // Deve ter pelo menos 8 caracteres
+            ];
+
+            // Verifique se todos os requisitos foram atendidos
+            return requisitos.every(requisito => requisito.test(senha));
+          }
+
+          document.addEventListener('DOMContentLoaded', function () {
+            var forms = document.getElementsByClassName('needs-validation');
+            Array.prototype.filter.call(forms, function (form) {
+              form.addEventListener('submit', function (event) {
+                if (form.checkValidity() === false) {
+                  event.preventDefault();
+                  event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+              }, false);
+            });
+          }, false);
         </script>
       </div>
     </div>

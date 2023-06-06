@@ -1,177 +1,167 @@
-(function () {
-  "use strict";
-
-  // Fetch all the forms we want to apply custom Bootstrap validation styles to
-  const forms = document.querySelectorAll(".needs-validation");
-
-  // Loop over them and prevent submission
-  Array.from(forms).forEach((form) => {
-    form.addEventListener(
-      "submit",
-      (event) => {
-        if (!form.checkValidity()) {
-          event.preventDefault();
-          event.stopPropagation();
-        }
-
-        form.classList.add("was-validated");
-      },
-      false
-    );
-  });
-})();
-
-function removeNumbers(input) {
-  input.value = input.value.replace(/[^A-Za-zÀ-ÖØ-öø-ÿ ]/g, "");
-}
-
-function formatPhoneInput(input) {
-  const value = input.value.replace(/\D/g, "");
-  const formattedValue = value
-    .replace(/^(\d{2})(\d)/g, "($1) $2")
-    .replace(/(\d)(\d{4})$/, "$1-$2");
-  input.value = formattedValue;
-}
-
-// ANCHOR - Validação de senha
-const passwordInput = document.querySelector(".pass-field input");
-const eyeIcon = document.querySelector(".pass-field i");
-const requirementList = document.querySelectorAll(".requirement-list li");
-const senhaFeedback = document.getElementById("senha-feedback");
-
-// An array of password requirements with corresponding
-// regular expressions and index of the requirement list item
-const requirements = [
-  { regex: /.{8,}/, index: 0 }, // Minimum of 8 characters
-  { regex: /[0-9]/, index: 1 }, // At least one number
-  { regex: /[a-z]/, index: 2 }, // At least one lowercase letter
-  { regex: /[^A-Za-z0-9]/, index: 3 }, // At least one special character
-  { regex: /[A-Z]/, index: 4 }, // At least one uppercase letter
-];
-
-passwordInput.addEventListener("keyup", (e) => {
-  requirements.forEach((item) => {
-    // Check if the password matches the requirement regex
-    const isValid = item.regex.test(e.target.value);
-    const requirementItem = requirementList[item.index];
-
-    // Updating class and icon of requirement item if requirement matched or not
-    if (isValid) {
-      requirementItem.classList.add("valid");
-      requirementItem.firstElementChild.className = "fa-solid fa-check";
-    } else {
-      requirementItem.classList.remove("valid");
-      requirementItem.firstElementChild.className = "fa-solid fa-circle";
-    }
-  });
-});
-
-eyeIcon.addEventListener("click", () => {
-  // Toggle the password input type between "password" and "text"
-  passwordInput.type = passwordInput.type === "password" ? "text" : "password";
-
-  // Update the eye icon class based on the password input type
-  eyeIcon.className = `fa-solid fa-eye${
-    passwordInput.type === "password" ? "" : "-slash"
-  }`;
-});
-
-// ANCHOR - Validação de senha 2
-function validarSenha(senha) {
-  // Defina os requisitos de senha aqui
-  const requisitos = [
-    /(?=.*\d)/, // Deve conter pelo menos um dígito
-    /(?=.*[a-z])/, // Deve conter pelo menos uma letra minúscula
-    /(?=.*[A-Z])/, // Deve conter pelo menos uma letra maiúscula
-    /(?=.*\W)/, // Deve conter pelo menos um caractere especial
-    /^.{8,}$/, // Deve ter pelo menos 8 caracteres
-  ];
-
-  // Verifique se todos os requisitos foram atendidos
-  return requisitos.every((requisito) => requisito.test(senha));
-}
-
-document.addEventListener(
-  "DOMContentLoaded",
-  function () {
-    var forms = document.getElementsByClassName("needs-validation");
-    Array.prototype.filter.call(forms, function (form) {
-      form.addEventListener(
-        "submit",
-        function (event) {
-          if (form.checkValidity() === false) {
-            event.preventDefault();
-            event.stopPropagation();
-          }
-          form.classList.add("was-validated");
-        },
-        false
-      );
-    });
-  },
-  false
-);
-
-// Abre o modal
-function openModal() {
-  document.getElementById("myModal").style.display = "block";
-}
-
-// Fecha o modal
-function closeModal() {
-  document.getElementById("myModal").style.display = "none";
-}
-
-// Limpa os dados do formulário
-function clearForm() {
-  document.getElementById("myForm").reset();
-}
+const form = document.getElementById("form");
+const passwordInput = document.getElementById("passwordInput");
+const signButton = document.getElementById("signButton");
+const displayButton = document.getElementById("displayButton");
 
 let dadosExibidos = false;
 
-function exibirDadosVerificados() {
-  const form = document.getElementById("myForm");
-  const dadosContainer = document.getElementById("dadosContainer");
-  dadosContainer.innerHTML = ""; // Limpa os dados exibidos anteriormente
+// Restante do código...
 
-  // Cria elementos HTML para cada campo do formulário e exibe os dados verificados
-  const fields = form.querySelectorAll(".form-control");
+// Remove números do campo de nome
+const nome = document.getElementById("nome");
+if (nome) {
+  nome.addEventListener("input", () => {
+    nome.value = nome.value.replace(/[0-9]/g, "");
+  });
+}
+
+// Formata o campo de telefone (XX) XXXX-XXXX
+const phoneInput = document.getElementById("phoneInput");
+phoneInput.addEventListener("input", () => {
+  let value = phoneInput.value.replace(/\D/g, "");
+  value = value.substring(0, 11);
+  value = value.replace(/^(\d{2})(\d)/g, "($1) $2");
+  value = value.replace(/(\d)(\d{4})$/, "$1-$2");
+  phoneInput.value = value;
+});
+
+//SECTION - VALIDA NOME
+function validarNome() {
+  var nome = document.getElementById("nome");
+
+  if (nome === null) {
+    console.log("Elemento 'nome' não encontrado.");
+    return;
+  }
+
+  var nome = nome.value.trim();
+
+  if (nome === "") {
+    showError("Por favor, insira um nome válido.");
+  } else {
+    hideError();
+  }
+}
+
+function showError(message) {
+  var errorElement = document.getElementById("errorNome");
+  if (errorElement === null) {
+    console.log("Elemento 'errorNome' não encontrado.");
+    return;
+  }
+
+  errorElement.textContent = message;
+  errorElement.style.display = "block";
+}
+
+function hideError() {
+  var errorElement = document.getElementById("errorNome");
+  if (errorElement === null) {
+    console.log("Elemento 'errorNome' não encontrado.");
+    return;
+  }
+
+  errorElement.style.display = "none";
+}
+
+// Event listener para a validação do campo de nome
+document.getElementById("nome").addEventListener("input", validarNome);
+
+//!SECTION - VALIDA NOME
+
+//SECTION - VALIDA NASCIMENTO
+function validarDataNascimento() {
+  var dataNascInput = document.getElementById("dataNasc");
+  var dataNasc = dataNascInput.value;
+
+  // Verificar se a data de nascimento está vazia
+  if (dataNasc === "") {
+    dataNascInput.setCustomValidity("Insira uma data de nascimento válida.");
+    return;
+  }
+
+  // Converter a data de nascimento em um objeto Date
+  var dataNascObj = new Date(dataNasc);
+
+  // Verificar se a data de nascimento é válida
+  if (isNaN(dataNascObj.getTime())) {
+    dataNascInput.setCustomValidity("Insira uma data de nascimento válida.");
+  } else {
+    dataNascInput.setCustomValidity("");
+  }
+}
+
+// Adicionar um ouvinte de evento para chamar a função validarDataNascimento quando o valor do campo for alterado
+document
+  .getElementById("dataNasc")
+  .addEventListener("change", validarDataNascimento);
+//!SECTION - VALIDA NASCIMENTO
+
+//SECTION - VALIDA SENHA
+// Validação do campo de senha
+function validarSenha() {
+  var passwordInput = document.getElementById("passwordInput");
+  var password = passwordInput.value;
+
+  if (password.length < 6) {
+    passwordInput.classList.add("is-invalid");
+    passwordInput.nextElementSibling.style.display = "block";
+  } else {
+    passwordInput.classList.remove("is-invalid");
+    passwordInput.nextElementSibling.style.display = "none";
+  }
+}
+
+// Event listener para a validação do campo de senha
+document
+  .getElementById("passwordInput")
+  .addEventListener("input", validarSenha);
+
+//!SECTION - VALIDA SENHA
+
+// Exibe os dados verificados do formulário
+function exibirDadosVerificados() {
+  const fields = form.querySelectorAll(".inputForm");
+  let dados = "<h3>Dados Verificados:</h3>";
   fields.forEach((field) => {
-    const label = document.createElement("label");
-    label.textContent = field.previousElementSibling.textContent;
-    const value = document.createElement("span");
-    value.textContent = field.value;
-    const container = document.createElement("div");
-    container.appendChild(label);
-    container.appendChild(value);
-    dadosContainer.appendChild(container);
+    const label = field.previousElementSibling
+      ? field.previousElementSibling.textContent
+      : "";
+    const value = field.value;
+    dados += `<p><strong>${label}:</strong> ${value}</p>`;
+  });
+  document.getElementById("dadosVerifica").innerHTML = dados;
+  dadosExibidos = true;
+}
+
+// Botão "Sign" - Exibe os dados verificados do formulário
+signButton.addEventListener("click", () => {
+  exibirDadosVerificados();
+});
+
+// Botão "Exibir Dados" - Exibe os dados verificados do formulário
+displayButton.addEventListener("click", () => {
+  exibirDadosVerificados();
+});
+
+// Envia o formulário
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  // Verifica se todos os campos do formulário estão preenchidos
+  let isFormValid = true;
+  const fields = form.querySelectorAll(".inputForm");
+  fields.forEach((field) => {
+    if (field.value === "") {
+      isFormValid = false;
+      field.classList.add("error");
+    } else {
+      field.classList.remove("error");
+    }
   });
 
-  // Mostra o container de dados verificados
-  dadosContainer.style.display = "block";
-}
-
-// Função para validar o formulário
-function validateForm(event) {
-  event.preventDefault(); // Impede o envio do formulário
-
-  const form = document.getElementById("myForm");
-  if (!form.checkValidity()) {
-    event.stopPropagation();
-  }
-  form.classList.add("was-validated");
-
-  if (!dadosExibidos && form.checkValidity()) {
+  // Exibe os dados verificados se o formulário for válido
+  if (isFormValid) {
     exibirDadosVerificados();
-    dadosExibidos = true;
-    const submitButton = document.getElementById("submitButton");
-    submitButton.innerText = "Confirmar Envio"; // Atualiza o texto do botão
-    submitButton.classList.add("confirm"); // Adiciona uma classe para estilização
-  } else if (dadosExibidos && form.checkValidity()) {
-    // O formulário já foi verificado e o usuário confirmou o envio
-    // Aqui você pode enviar o formulário via AJAX ou permitir que o envio ocorra normalmente
-    form.submit(); // Envio do formulário
   }
-}
-
-document.getElementById("submitButton").addEventListener("click", validateForm);
+});

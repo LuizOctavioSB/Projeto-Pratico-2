@@ -25,7 +25,4 @@
       data-bs-target="#exampleModal">Sign
       Up</button>
   </div>
-  <?php
-  include "modal.php";
-  ?>
 </header>

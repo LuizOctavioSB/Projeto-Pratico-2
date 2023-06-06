@@ -20,11 +20,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   }
 
   // Exibe os dados do usuário
-  echo "<h3>Deseja enviar o formulário com os seguintes dados:</h3>";
+  echo "<h3>Deseja confirmar os seguintes dados?</h3>";
   echo "<p><strong>Nome:</strong> " . $nome . "</p>";
   echo "<p><strong>E-mail:</strong> " . $email . "</p>";
-  echo "<p><strong>Data de Nascimento:</strong> " . $dataNascimento . "</p>";
-  echo "<p><strong>Telefone:</strong> " . $telefone . "</p>";
+  echo "<p><strong>Data de Nascimento:</strong> " . $dataNasc . "</p>";
+  echo "<p><strong>Telefone:</strong> " . $phoneInput . "</p>";
 
   // Você pode adicionar aqui o código para processar e armazenar os dados no banco de dados, enviar e-mails, etc.
 

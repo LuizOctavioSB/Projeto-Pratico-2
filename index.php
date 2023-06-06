@@ -18,6 +18,9 @@
     include "php/header.php";
     ?>
     <main>
+      <?php
+      include "PHP/modal.php";
+      ?>
       <section class="PLIndex">
         <!-- espaço para as 4 playlists mais acessadas -->
         <h1 id="h1Index">Playlists mais<br>acessadas</h1>
@@ -28,9 +31,8 @@
               allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
               loading="lazy"></iframe>
           </li>
-          <li></li>
-          <li></li>
-          <li></li>
+          <div id=dadosVerifica>
+          </div>
         </ul>
       </section>
       <section>

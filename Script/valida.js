@@ -34,10 +34,14 @@ function validarNome() {
     return;
   }
 
-  var nome = nome.value.trim();
+  var nomeValor = nome.value.trim();
 
-  if (nome === "") {
+  if (nomeValor === "") {
     showError("Por favor, insira um nome válido.");
+  } else if (!/^[a-zA-Z ]+$/.test(nomeValor)) {
+    showError("O nome não pode conter caracteres especiais ou números.");
+  } else if (nomeValor.split(" ").length < 2) {
+    showError("Por favor, insira o nome completo.");
   } else {
     hideError();
   }

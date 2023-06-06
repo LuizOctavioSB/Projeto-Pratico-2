@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Estilo/style.css">
+    <link rel="stylesheet" href="Estilo/home.css">
+    <link rel="stylesheet" href="Estilo/header.css">
+    <link rel="stylesheet" href="Estilo/footer.css">
     <link rel="icon" href="Midias/logo.svg">
     <title>Silksong Web Player: Music</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
@@ -31,8 +34,6 @@
               allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
               loading="lazy"></iframe>
           </li>
-          <div id=dadosVerifica>
-          </div>
         </ul>
       </section>
       <section>

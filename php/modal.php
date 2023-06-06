@@ -27,6 +27,25 @@
                   Insira uma data de nascimento válida.
                 </div>
               </div>
+              <!-- NOTE - INPUT EMAIL FORMULÁRIO -->
+              <div class="boxForm">
+                <label class="labelForm required">E-mail</label>
+                <input type="email" class="inputForm" id="email" placeholder="nome@example.com" required>
+                <div class="invalid-feedback">
+                  Insira um E-mail válido.
+                </div>
+              </div>
+              <!-- NOTE - INPUT SENHA FORMULÁRIO -->
+              <div class="boxForm">
+                <div class="pass-field">
+                  <label class="labelForm required">Senha</label>
+                  <input type="password" class="inputForm" id="passwordInput" placeholder="Senha" required>
+                  <div class="invalid-feedback">
+                    A senha deve conter pelo menos 6 caracteres
+                  </div>
+                  <i class="fa-solid fa-eye"></i>
+                </div>
+              </div>
               <!-- NOTE - INPUT TELEFONE FORMULÁRIO -->
               <div class="boxForm">
                 <label class="labelForm required">Telefone</label>
@@ -39,11 +58,11 @@
               </div>
               <!-- NOTE - INPUT SEXO FORMULÁRIO -->
               <div class="boxForm">
-                <label class="labelForm required">Sexo</label>
+                <label class="required">Sexo</label>
                 <div class="inputChecks">
                   <div class="sex1">
                     <div>
-                      <input type="radio" class="inputForm" name="radio-stacked">
+                      <input type="radio" name="radio-stacked">
                       <label>Masculino</label>
                     </div>
                     <div>
@@ -61,25 +80,6 @@
                       <label class="form-check-label">Prefiro não dizer</label>
                     </div>
                   </div>
-                </div>
-              </div>
-              <!-- NOTE - INPUT EMAIL FORMULÁRIO -->
-              <div class="boxForm">
-                <label class="labelForm required">E-mail</label>
-                <input type="email" class="inputForm" id="email" placeholder="nome@example.com" required>
-                <div class="invalid-feedback">
-                  Insira um E-mail válido.
-                </div>
-              </div>
-              <!-- NOTE - INPUT SENHA FORMULÁRIO -->
-              <div class="boxForm">
-                <div class="pass-field">
-                  <label class="labelForm required">Senha</label>
-                  <input type="password" class="inputForm" id="passwordInput" placeholder="Senha" required>
-                  <div class="invalid-feedback">
-                    Insira uma senha válida.
-                  </div>
-                  <i class="fa-solid fa-eye"></i>
                 </div>
               </div>
               <!-- NOTE - INPUT CHECKBOX TERMOS FORMULÁRIO -->
@@ -120,10 +120,12 @@
               </div>
             </div>
             <div class="col-12">
-              <? include "php/dadosModal.php"; ?>
-              <button type="button" id=signButton>Sign Up</button>
-              <button id="displayButton" type="button">Exibir Dados</button>
+              <button type="button" id=signButton>Continuar</button>
             </div>
+            <!-- SECTION - DADOS DO USUÁRIO -->
+            <div id=dadosVerifica>
+            </div>
+            <!-- SECTION - DADOS DO USUÁRIO -->
             <hr class="my-2">
             <h2 class="fs-5 fw-bold mb-2">Ou entre com uma das contas a baixo</h2>
             <button class="w-100 py-2 mb-1 btn btn-outline-secondary rounded-3" type="submit">

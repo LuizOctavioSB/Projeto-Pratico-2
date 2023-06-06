@@ -122,7 +122,7 @@ document
 // Exibe os dados verificados do formulário
 function exibirDadosVerificados() {
   const fields = form.querySelectorAll(".inputForm");
-  let dados = "<h3>Dados Verificados:</h3>";
+  let dados = "<h3>Deseja confirmar os seguintes dados?</h3>";
   fields.forEach((field) => {
     const label = field.previousElementSibling
       ? field.previousElementSibling.textContent

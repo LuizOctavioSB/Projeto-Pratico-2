@@ -22,7 +22,6 @@
   <div class="usuario">
     <a href="login.php">Log In</a>
     <button type="button" class="btn btn-primary buttonSignUp" data-bs-toggle="modal"
-      data-bs-target="#exampleModal">Sign
-      Up</button>
+      data-bs-target="#exampleModal">Criar conta</button>
   </div>
 </header>

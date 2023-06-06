@@ -1,0 +1,20 @@
+/* CSS para resoluções menores */
+@media (max-width: 600px) {
+
+  /* Ajuste o tamanho da fonte principal */
+  #h1Index {
+    font-size: 20px;
+  }
+
+  /* Reduza o tamanho da playlist embutida */
+  .PLIndex ul li iframe {
+    height: 200px;
+    width: 100%;
+  }
+
+  /* Ajuste o espaçamento entre as playlists */
+  .PLIndex ul {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}

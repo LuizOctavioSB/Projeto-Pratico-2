@@ -24,18 +24,22 @@
       <?php
       include "PHP/modal.php";
       ?>
-      <section class="PLIndex">
-        <!-- espaço para as 4 playlists mais acessadas -->
-        <h1 id="h1Index">Playlists mais<br>acessadas</h1>
-        <ul>
-          <li><iframe style="border-radius:12px"
-              src="https://open.spotify.com/embed/playlist/37i9dQZF1DX0FOF1IUWK1W?utm_source=generator" width="100%"
-              height="352" frameBorder="0" allowfullscreen=""
-              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-              loading="lazy"></iframe>
-          </li>
-        </ul>
-      </section>
+      <div class="my-5">
+        <div class="p-3 mb-2">
+          <div class=" container py-5">
+            <!-- espaço para as 4 playlists mais acessadas -->
+            <h1 class="text-white">Playlists mais<br>acessadas</h1>
+            <ul class="col-lg-8 mx-auto lead">
+              <li><iframe style="border-radius:12px"
+                  src="https://open.spotify.com/embed/playlist/37i9dQZF1DX0FOF1IUWK1W?utm_source=generator" width="100%"
+                  height="352" frameBorder="0" allowfullscreen=""
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                  loading="lazy"></iframe>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
       <section>
         <!-- espaço para ultima playlist ouvida -->
       </section>

@@ -16,7 +16,6 @@
     <li <?php if (getCurrentPage() == "contato.php")
       echo 'class="atual"'; ?>><a href="contato.php">Contato</a>
     </li>
-
   </ul>
 
   <div class="usuario">

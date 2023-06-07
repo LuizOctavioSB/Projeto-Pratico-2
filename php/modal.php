@@ -21,28 +21,21 @@
               <!-- NOTE - INPUT NASCIMENTO FORMULÁRIO -->
               <div class="boxForm">
                 <label class="labelForm required">Data de Nascimento</label>
-                <input type="date" class="inputForm" id="dataNasc" required onclick="validarDataNascimento()"
-                  value="<?php echo htmlspecialchars($_POST['dataNasc'] ?? '', ENT_QUOTES, 'UTF-8'); ?>">
-                <div class="invalid-feedback">
-                  Insira uma data de nascimento válida.
-                </div>
+                <input type="date" class="inputForm" id="dataNasc" required>
+                <div id="errorDataNasc" class="error-message"></div>
               </div>
               <!-- NOTE - INPUT EMAIL FORMULÁRIO -->
               <div class="boxForm">
                 <label class="labelForm required">E-mail</label>
                 <input type="email" class="inputForm" id="email" placeholder="nome@example.com" required>
-                <div class="invalid-feedback">
-                  Insira um E-mail válido.
-                </div>
+                <div id="errorEmail" class="error-message"></div>
               </div>
               <!-- NOTE - INPUT SENHA FORMULÁRIO -->
               <div class="boxForm">
                 <div class="pass-field">
                   <label class="labelForm required">Senha</label>
                   <input type="password" class="inputForm" id="passwordInput" placeholder="Senha" required>
-                  <div class="invalid-feedback">
-                    A senha deve conter pelo menos 6 caracteres
-                  </div>
+                  <div id="errorSenha" class="error-message"></div>
                   <i class="fa-solid fa-eye"></i>
                 </div>
               </div>
@@ -50,11 +43,8 @@
               <div class="boxForm">
                 <label class="labelForm required">Telefone</label>
                 <input type="tel" class="inputForm" id="phoneInput" placeholder="XX XXXXXXXXX"
-                  pattern="\(\d{2}\) \d{4,5}-\d{4}" required
-                  value="<?php echo htmlspecialchars($_POST['phoneInput'] ?? '', ENT_QUOTES, 'UTF-8'); ?>">
-                <div class="invalid-feedback">
-                  Insira um número de telefone válido.
-                </div>
+                  pattern="\(\d{2}\) \d{4,5}-\d{4}" required>
+                <div id="errorTelefone" class="error-message"></div>
               </div>
               <!-- NOTE - INPUT SEXO FORMULÁRIO -->
               <div class="boxForm">
@@ -81,6 +71,7 @@
                     </div>
                   </div>
                 </div>
+                <div id="errorSexo" class="error-message"></div>
               </div>
               <!-- NOTE - INPUT CHECKBOX TERMOS FORMULÁRIO -->
               <div id="termosForms">

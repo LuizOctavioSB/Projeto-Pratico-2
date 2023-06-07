@@ -30,7 +30,8 @@
           <input type="password" id="senha" class="input" name="senha" placeholder="Digite sua senha" required>
           <div id="buttonsLogin">
             <button><a>Login</a></button>
-            <button><a data-bs-toggle="modal" data-bs-target="#exampleModal">Criar conta<a></button>
+            <button data-bs-toggle="modal" data-bs-target="#exampleModal"><a data-bs-toggle="modal"
+                data-bs-target="#exampleModal">Criar conta<a></button>
           </div>
         </div>
       </form>

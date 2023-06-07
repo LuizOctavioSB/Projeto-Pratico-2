@@ -318,6 +318,10 @@ input[type="radio"].is-invalid+label {
   right: 5% !important;
 }
 
+.error-message {
+  color: red;
+}
+
 /* SECTION - INPUTS */
 
 
@@ -832,7 +836,7 @@ hr {
 
   /* SECTION - STYLE MODAL RESPONSIVO*/
   #exampleModal {
-    padding-right: 13% !important;
+    width: 100%;
     padding-top: 10%;
   }
 
@@ -860,10 +864,6 @@ hr {
 
   .modal-body {
     padding: 1rem;
-  }
-
-  .modal-body .boxForm {
-    margin-bottom: 1rem;
   }
 
   .modal-body .inputForm {
@@ -928,6 +928,16 @@ hr {
     flex-wrap: wrap;
     justify-content: space-between;
     flex-direction: column;
+  }
+
+  .modal-body .boxForm {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .sex1,
+  .sex {
+    width: 100%;
   }
 
   /* SECTION - STYLE MODAL RESPONSIVO*/

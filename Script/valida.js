@@ -166,6 +166,41 @@ document.querySelectorAll('input[name="radio-stacked"]').forEach((element) => {
 
 // !SECTION - VALIDA O CAMPO SEXO
 
+//SECTION - VALIDA CHECKBOX
+function validarCheckbox() {
+  const checkbox = document.getElementById("invalidCheck2");
+  const errorElement = document.querySelector(".invalid-feedback");
+
+  if (!checkbox.checked) {
+    showError("Você precisa aceitar os termos para prosseguir.", errorElement);
+    return false;
+  } else {
+    hideError(errorElement);
+    return true;
+  }
+}
+
+document
+  .getElementById("invalidCheck2")
+  .addEventListener("change", validarCheckbox);
+//!SECTION - VALIDA CHECKBOX
+
+// SECTION - SANITIZA OS DADOS DE ENTRADA
+function sanitizeInput(data) {
+  // Remove espaços em branco no início e no final
+  data = data.trim();
+  // Converte caracteres especiais em entidades HTML
+  data = data
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+  // Remove barras invertidas adicionadas automaticamente
+  data = data.replace(/\\/g, "");
+  return data;
+}
+
+// SECTION - SANITIZA OS DADOS DE ENTRADA
+
 // SECTION - EXIBE OS DADOS VERIFICADOS
 function exibirDadosFormulario() {
   const form = document.getElementById("form");
@@ -177,7 +212,7 @@ function exibirDadosFormulario() {
     const label = field.previousElementSibling
       ? field.previousElementSibling.textContent
       : "";
-    const value = field.value;
+    const value = sanitizeInput(field.value);
     dados += `<p><strong>${label}:</strong> ${value}</p>`;
   });
 
@@ -185,7 +220,7 @@ function exibirDadosFormulario() {
 
   sexoInputs.forEach((sexoInput) => {
     if (sexoInput.checked) {
-      sexoSelecionado = sexoInput.nextElementSibling.textContent;
+      sexoSelecionado = sanitizeInput(sexoInput.nextElementSibling.textContent);
     }
   });
 
@@ -200,7 +235,6 @@ function exibirDadosFormulario() {
 function validarFormulario() {
   // Verifica se todos os campos do formulário estão preenchidos e se as validações são cumpridas
   let isFormValid = false;
-  const fields = form.querySelectorAll(".inputForm");
 
   // Verifica as validações de cada campo individualmente
   isFormValid =
@@ -209,7 +243,8 @@ function validarFormulario() {
     validarEmail() &&
     validarSenha() &&
     validarTelefone() &&
-    validarSexo();
+    validarSexo() &&
+    validarCheckbox(); // Adicione a validação do checkbox aqui
 
   // Exibe os dados verificados se o formulário for válido
   if (isFormValid && !document.querySelector(".error")) {

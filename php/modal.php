@@ -91,9 +91,6 @@
                       Compartilhar meus dados cadastrais com os provedores de conteúdo do Silksong para fins de
                       marketing.
                     </label>
-                    <div class="invalid-feedback">
-                      You must agree before submitting.
-                    </div>
                   </div>
                 </div>
 

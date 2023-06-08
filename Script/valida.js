@@ -12,14 +12,18 @@ function showError(message, errorElement) {
   errorElement.classList.add("error-message"); // Adiciona a classe de erro
 }
 
-// Função para ocultar mensagem de erro
+// !SECTION - EXIBE AS MENSAGENS DE ERRO
+
+// SECTION - ESCONDE AS MENSAGENS DE SUCESSO
 function hideError(errorElement) {
   errorElement.textContent = "";
   errorElement.style.display = "none";
   errorElement.classList.remove("error-message"); // Remove a classe de erro
 }
 
-// Função para validar o campo de nome
+// !SECTION - ESCONDE AS MENSAGENS DE SUCESSO
+
+// SECTION - VALIDA O CAMPO NOME
 function validarNome() {
   const nome = document.getElementById("nome");
   const errorElement = document.getElementById("errorNome");
@@ -53,7 +57,9 @@ function validarDataNascimento() {
   }
 }
 
-// Event listener para a validação do campo de data de nascimento
+// !SECTION - VALIDA O CAMPO NOME
+
+// SECTION - VALIDA O CAMPO DATA DE NASCIMENTO
 document
   .getElementById("dataNasc")
   .addEventListener("input", validarDataNascimento);
@@ -75,7 +81,9 @@ function validarEmail() {
   }
 }
 
-// Event listener para a validação do campo de email
+// !SECTION - VALIDA O CAMPO DATA DE NASCIMENTO
+
+// SECTION - VALIDA O CAMPO EMAIL
 document.getElementById("email").addEventListener("input", validarEmail);
 
 // Função para validar a senha
@@ -90,12 +98,15 @@ function validarSenha() {
   }
 }
 
-// Event listener para a validação do campo de senha
+// !SECTION - VALIDA O CAMPO EMAIL
+
+// SECTION - VALIDA O CAMPO SENHA
 document
   .getElementById("passwordInput")
   .addEventListener("input", validarSenha);
+// !SECTION - VALIDA O CAMPO SENHA
 
-// Função para validar o campo de telefone
+// SECTION - VALIDA O CAMPO TELEFONE
 function validarTelefone() {
   const telefone = document.getElementById("phoneInput");
   const errorElement = document.getElementById("errorTelefone");
@@ -113,7 +124,9 @@ document
   .getElementById("phoneInput")
   .addEventListener("input", validarTelefone);
 
-// Função para validar o campo de sexo
+// !SECTION - VALIDA O CAMPO TELEFONE
+
+// SECTION - VALIDA O CAMPO SEXO
 function validarSexo() {
   const sexo = document.querySelectorAll('input[name="radio-stacked"]');
   const errorElement = document.getElementById("errorSexo");
@@ -138,7 +151,9 @@ document.querySelectorAll('input[name="radio-stacked"]').forEach((element) => {
   element.addEventListener("change", validarSexo);
 });
 
-// Função para exibir os dados verificados do formulário
+// !SECTION - VALIDA O CAMPO SEXO
+
+// SECTION - EXIBE OS DADOS VERIFICADOS
 function exibirDadosVerificados() {
   const fields = form.querySelectorAll(".inputForm");
   let dados = "<h3>Deseja confirmar os seguintes dados?</h3>";
@@ -153,7 +168,9 @@ function exibirDadosVerificados() {
   dadosExibidos = true;
 }
 
-// Função para validar o formulário
+// !SECTION - EXIBE OS DADOS VERIFICADOS
+
+// SECTION - VALIDA O FORMULÁRIO
 function validarFormulario() {
   // Verifica se todos os campos do formulário estão preenchidos e se as validações são cumpridas
   let isFormValid = true;
@@ -181,7 +198,11 @@ function validarFormulario() {
   }
 }
 
-// Event listener para o botão "Sign"
+// !SECTION - VALIDA O FORMULÁRIO
+
+// SECTION - EXIBE OS DADOS VERIFICADOS
 signButton.addEventListener("click", () => {
   validarFormulario();
 });
+
+// !SECTION - EXIBE OS DADOS VERIFICADOS

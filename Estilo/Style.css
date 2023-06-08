@@ -196,6 +196,11 @@ input[type="radio"].is-invalid+label {
   margin-top: 2%;
 }
 
+/* SECTION - TELA LOGIN */
+.mainLogin {
+  display: contents;
+}
+
 /* !SECTION - TELA CRIAR CONTA */
 
 /* - - - - - - - - - - - - - - - - - - - Formulario - - - - - - - - - - - - - - - - - - */
@@ -761,27 +766,55 @@ hr {
     /* Adicionando espaço entre o texto e o menu */
   }
 
-  .menu {
-    flex-direction: column;
-    align-items: center;
+  .Menu {
+    width: 100%;
+    align-items: flex-start;
     margin-top: 10px;
+    display: flex;
+    flex-direction: row;
   }
 
-  .menu ul li {
+  #menuNav.Menu {
+    margin: 0;
+  }
 
+  .Menu ul li {
     margin-bottom: 5px;
   }
 
-  ul #menuNav .Menu {
-    margin-top: 50px !important;
-  }
 
   #nav .Menu a {
     font-size: 12px !important;
   }
 
+  .Menu li {
+    margin-right: 7%;
+  }
+
   .usuario {
-    width: 60%;
+    display: flex;
+    gap: 1vw;
+    font-size: 17px;
+    font-weight: 600;
+    align-items: center;
+    width: 48%;
+    flex-direction: column-reverse;
+  }
+
+  div.usuario a {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    font-size: 12px;
+    gap: 0;
+  }
+
+  .usuario {
+    width: 25%;
+  }
+
+  .usuario button {
+    width: 100%;
   }
 
   /* !SECTION - STYLE HEADER RESPONSIVA */
@@ -789,21 +822,29 @@ hr {
 
   /* SECTION - STYLE FOOTER RESPONSIVO*/
   footer {
-    height: 200px;
     padding: 10px;
     font-size: 14px;
+    position: absolute;
+    bottom: 0;
   }
 
   #divPai {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    width: 92%;
+    width: 100%;
+    flex-direction: column-reverse;
   }
 
   #div1 {
     text-align: center;
     margin-bottom: 20px;
+    gap: 1vh;
+  }
+
+  #div1 p,
+  #div2 p,
+  #div3 p {
+    margin-bottom: 0 !important;
   }
 
   #paginasFooter {
@@ -817,6 +858,7 @@ hr {
 
   #div2 {
     text-align: center;
+    gap: 0;
   }
 
   .container {
@@ -837,6 +879,10 @@ hr {
     margin-right: 5px;
   }
 
+  hr {
+    width: 100%;
+  }
+
   /* !SECTION - STYLE FOOTER RESPONSIVO*/
 
   /* SECTION - STYLE MODAL RESPONSIVO*/
@@ -845,11 +891,12 @@ hr {
     padding-top: 10%;
   }
 
-  .modal-dialog {
-    max-width: 100%;
-    width: 83%;
-    margin-left: 7%;
-    margin-right: 7%;
+  .modal.show .modal-dialog {
+    transform: none;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
   }
 
   .modal-content {
@@ -945,5 +992,16 @@ hr {
     width: 100%;
   }
 
+  #passwordInput {
+    width: 100%;
+  }
+
   /* SECTION - STYLE MODAL RESPONSIVO*/
+
+  /* SECTION - CONTATO RESPONSIVO */
+
+  #motivo.input,
+  input#msgAluno {
+    width: 100%;
+  }
 }

@@ -20,7 +20,7 @@
     <?php
     include "php/header.php";
     ?>
-    <main>
+    <main class="mainLogin">
       <?php
       include "PHP/modal.php";
       ?>

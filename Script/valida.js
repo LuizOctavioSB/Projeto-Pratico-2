@@ -35,10 +35,13 @@ function validarNome() {
       "O nome não pode conter caracteres especiais ou números.",
       errorElement
     );
+    return false;
   } else if (nome.value.trim().split(" ").length < 2) {
     showError("Por favor, insira o nome completo.", errorElement);
+    return false;
   } else {
     hideError(errorElement);
+    return true;
   }
 }
 
@@ -52,8 +55,10 @@ function validarDataNascimento() {
 
   if (dataNasc.value === "") {
     showError("Por favor, insira uma data de nascimento válida.", errorElement);
+    return false;
   } else {
     hideError(errorElement);
+    return true;
   }
 }
 
@@ -76,8 +81,10 @@ function validarEmail() {
       "Por favor, insira um email válido com o formato correto.",
       errorElement
     );
+    return false;
   } else {
     hideError(errorElement);
+    return true;
   }
 }
 
@@ -93,8 +100,10 @@ function validarSenha() {
 
   if (senha.value.length < 6) {
     showError("A senha deve conter pelo menos 6 caracteres.", errorElement);
+    return false;
   } else {
     hideError(errorElement);
+    return true;
   }
 }
 
@@ -115,8 +124,10 @@ function validarTelefone() {
 
   if (!telefoneRegex.test(telefone.value)) {
     showError("Insira um número de telefone válido.", errorElement);
+    return false;
   } else {
     hideError(errorElement);
+    return true;
   }
 }
 
@@ -141,8 +152,10 @@ function validarSexo() {
 
   if (!isChecked) {
     showError("Por favor, selecione uma opção de sexo.", errorElement);
+    return false;
   } else {
     hideError(errorElement);
+    return true;
   }
 }
 
@@ -154,9 +167,12 @@ document.querySelectorAll('input[name="radio-stacked"]').forEach((element) => {
 // !SECTION - VALIDA O CAMPO SEXO
 
 // SECTION - EXIBE OS DADOS VERIFICADOS
-function exibirDadosVerificados() {
+function exibirDadosFormulario() {
+  const form = document.getElementById("form");
   const fields = form.querySelectorAll(".inputForm");
+  const sexoInputs = form.querySelectorAll('input[name="radio-stacked"]');
   let dados = "<h3>Deseja confirmar os seguintes dados?</h3>";
+
   fields.forEach((field) => {
     const label = field.previousElementSibling
       ? field.previousElementSibling.textContent
@@ -164,8 +180,18 @@ function exibirDadosVerificados() {
     const value = field.value;
     dados += `<p><strong>${label}:</strong> ${value}</p>`;
   });
+
+  let sexoSelecionado = "";
+
+  sexoInputs.forEach((sexoInput) => {
+    if (sexoInput.checked) {
+      sexoSelecionado = sexoInput.nextElementSibling.textContent;
+    }
+  });
+
+  dados += `<p><strong>Sexo:</strong> ${sexoSelecionado}</p>`;
+
   document.getElementById("dadosVerifica").innerHTML = dados;
-  dadosExibidos = true;
 }
 
 // !SECTION - EXIBE OS DADOS VERIFICADOS
@@ -173,28 +199,21 @@ function exibirDadosVerificados() {
 // SECTION - VALIDA O FORMULÁRIO
 function validarFormulario() {
   // Verifica se todos os campos do formulário estão preenchidos e se as validações são cumpridas
-  let isFormValid = true;
+  let isFormValid = false;
   const fields = form.querySelectorAll(".inputForm");
-  fields.forEach((field) => {
-    if (field.value === "") {
-      isFormValid = false;
-      field.classList.add("error");
-    } else {
-      field.classList.remove("error");
-    }
-  });
 
   // Verifica as validações de cada campo individualmente
-  validarNome();
-  validarDataNascimento();
-  validarEmail();
-  validarSenha();
-  validarTelefone();
-  validarSexo();
+  isFormValid =
+    validarNome() &&
+    validarDataNascimento() &&
+    validarEmail() &&
+    validarSenha() &&
+    validarTelefone() &&
+    validarSexo();
 
   // Exibe os dados verificados se o formulário for válido
   if (isFormValid && !document.querySelector(".error")) {
-    exibirDadosVerificados();
+    exibirDadosFormulario();
   }
 }
 

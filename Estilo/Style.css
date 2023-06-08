@@ -207,6 +207,8 @@ input[type="radio"].is-invalid+label {
 #form {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 #form li {
@@ -245,9 +247,11 @@ input[type="radio"].is-invalid+label {
 
 #recuperaSenha {
   text-align: center;
+  margin-bottom: 10%;
 }
 
 #formLogin {
+  margin-top: 10%;
   display: flex;
   flex-direction: column;
   gap: 2vh;
@@ -398,7 +402,7 @@ iframe {
 /* SECTION - HEADER */
 #nav {
   background-color: #050718;
-  margin-bottom: 10%;
+  margin-bottom: 5%;
   align-items: center;
   display: flex;
   justify-content: space-between;
@@ -631,10 +635,12 @@ section {
 /* SECTION - FOOTER */
 footer {
   color: #790eab;
-  bottom: 10px;
-  width: 100%;
+  position: fixed;
   left: 0;
-  z-index: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 20px;
+  text-align: center;
 }
 
 footer a {
@@ -664,6 +670,16 @@ hr {
   color: white;
 }
 
+#div2 {
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+}
+
+#div2 p {
+  margin-bottom: 0;
+}
+
 #div1 {
   display: flex;
   flex-direction: column;
@@ -672,6 +688,7 @@ hr {
 
 #div1 h3 {
   font-size: 2vw;
+  margin-bottom: 0;
 }
 
 #paginasFooter {
@@ -682,12 +699,6 @@ hr {
 
 #div1 p {
   font-size: 0.8vw;
-}
-
-#div2 {
-  display: flex;
-  flex-direction: column;
-  gap: 1vh;
 }
 
 .infoFooter {
@@ -739,6 +750,28 @@ hr {
   position: absolute;
   top: -35px;
   left: 0;
+}
+
+#linksFooter {
+  display: flex;
+  flex-direction: row;
+}
+
+#linksFooter button {
+  margin: 4%;
+  padding: 11%;
+}
+
+#linksFooter button:first-child:hover {
+  background-color: #2753a7 !important;
+}
+
+#linksFooter button:nth-child(2):hover {
+  background-color: #000 !important;
+}
+
+#linksFooter button:nth-child(3):hover {
+  background-image: linear-gradient(to right, #ff1493, #ffa500);
 }
 
 /* !SECTION - FOOTER */

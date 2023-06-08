@@ -24,8 +24,8 @@
       <?php
       include "PHP/modal.php";
       ?>
-      <div class="my-0 pt-0">
-        <div class="p-3 mb-2 pt-0">
+      <div class="my-0 pt-0 mb-5">
+        <div class="p-0 mb-2 pt-0">
           <div class="container py-5 d-flex flex-column bg-gradient pt-2"
             style="background: linear-gradient(180deg, rgba(23, 24, 32, 0.54) 0%, #171820 51.56%, rgba(23, 24, 32, 0.49) 100%, rgba(23, 24, 32, 0.54) 100%);">
             <!-- espaço para as 4 playlists mais acessadas -->
@@ -134,6 +134,7 @@
         <!-- espaço para ultima playlist ouvida -->
       </section>
     </main>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <?php include "php/footer.php"; ?>
   </body>
 

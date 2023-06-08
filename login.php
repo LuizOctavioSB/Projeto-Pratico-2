@@ -29,13 +29,12 @@
           <input type="email" id="email" class="input" name="email" placeholder="Digite seu e-mail" required>
           <input type="password" id="senha" class="input" name="senha" placeholder="Digite sua senha" required>
           <div id="buttonsLogin">
-            <button><a>Login</a></button>
-            <button data-bs-toggle="modal" data-bs-target="#exampleModal"><a data-bs-toggle="modal"
-                data-bs-target="#exampleModal">Criar conta<a></button>
+            <button>Login</button>
+            <button data-bs-toggle="modal" data-bs-target="#exampleModal">Criar conta</button>
           </div>
         </div>
+        <a id="recuperaSenha" href="RecuperaSenha.php">Esqueceu sua senha?</a>
       </form>
-      <a id="recuperaSenha" href="RecuperaSenha.php">Esqueceu sua senha?</a>
     </main>
     <?php
     include "php/footer.php";

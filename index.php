@@ -26,7 +26,7 @@
       ?>
       <div class="my-5">
         <div class="p-3 mb-2">
-          <div class=" container py-5">
+          <div class="container py-5 d-flex flex-column">
             <!-- espaço para as 4 playlists mais acessadas -->
             <h1 class="text-white">Playlists mais<br>acessadas</h1>
             <ul class="col-lg-8 mx-auto lead">

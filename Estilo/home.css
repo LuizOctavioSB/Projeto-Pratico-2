@@ -1,4 +1,40 @@
-/* CSS para resoluções menores */
+.scrollable-container {
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  padding-bottom: 15px;
+  /* Espaço para a scrollbar */
+}
+
+.scrollable-list {
+  display: inline-flex;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.scrollable-list li {
+  margin-right: 10px;
+  /* Espaçamento entre os itens */
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  bottom: -25px;
+  /* Ajuste a posição vertical dos botões de navegação */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 25px;
+  height: 25px;
+  background-size: 100% 100%;
+}
+
+.carousel-item {
+  text-align: center;
+}
+
 @media (max-width: 600px) {
 
   /* Ajuste o tamanho da fonte principal */

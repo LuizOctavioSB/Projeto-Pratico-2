@@ -3,7 +3,7 @@
 
     <div class="modal-content rounded-4 shadow">
       <div class="modalHeader" class="modal-header pt-4  pb-3 border-bottom-0">
-        <h1 class="fw-bold mb-0 fs-2">Cadastre-se</h1>
+        <h1 class="fw-bold mb-0 fs-2 text-black-50">Cadastre-se</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><img
             src="Midias/btnclose.svg"></button>
       </div>
@@ -107,8 +107,8 @@
                 </div>
               </div>
             </div>
-            <div class="col-12">
-              <button type="button" id=signButton>Continuar</button>
+            <div class="col-12 justify-content-center">
+              <button type="button" id="signButton">Continuar</button>
             </div>
             <!-- SECTION - DADOS DO USUÁRIO -->
             <div id=dadosVerifica>

@@ -270,6 +270,7 @@ input[type="radio"].is-invalid+label {
 
 .pass-field input {
   outline: none;
+  width: 100%;
 }
 
 .pass-field i {
@@ -479,7 +480,8 @@ iframe {
 }
 
 .usuario button,
-#signButton {
+#signButton,
+#dadosVerifica button {
   background: linear-gradient(90deg, #FF4040 0%, var(--cor-destaque) 96.52%);
   border-radius: 6px;
   width: 100px;
@@ -489,6 +491,12 @@ iframe {
   cursor: pointer;
   font-size: 12px;
   font-weight: 600;
+}
+
+#dadosVerifica button {
+  margin-right: 1%;
+  height: 11%;
+  left: 50%;
 }
 
 .class {
@@ -635,9 +643,9 @@ footer a {
 }
 
 hr {
-  margin: 0 auto;
+  width: 100%;
+  margin: 0;
   background-color: var(--cor-fundo);
-  width: calc(100% - 200px);
   height: 0.5px;
 }
 
@@ -679,7 +687,7 @@ hr {
 #div2 {
   display: flex;
   flex-direction: column;
-  gap: 3vh;
+  gap: 1vh;
 }
 
 .infoFooter {
@@ -697,13 +705,9 @@ hr {
   gap: 10px;
 }
 
-.container button {
-  width: 50px;
-  height: 50px;
-  border: none;
-  background-color: #313638;
-  transition: 0.3s;
-  cursor: pointer;
+.square-button {
+  width: 45px;
+  height: 45px;
 }
 
 .icon {

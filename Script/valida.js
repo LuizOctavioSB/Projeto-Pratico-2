@@ -30,9 +30,9 @@ function validarNome() {
 
   if (nome.value.trim() === "") {
     showError("Por favor, insira um nome válido.", errorElement);
-  } else if (!/^[a-zA-Z ]+$/.test(nome.value)) {
+  } else if (!/^[a-zA-ZÀ-ÿ ]+$/.test(nome.value)) {
     showError(
-      "O nome não pode conter caracteres especiais ou números.",
+      "O nome não pode conter caracteres especiais, números ou símbolos.",
       errorElement
     );
     return false;
@@ -201,7 +201,44 @@ function sanitizeInput(data) {
 
 // SECTION - SANITIZA OS DADOS DE ENTRADA
 
-// SECTION - EXIBE OS DADOS VERIFICADOS
+//SECTION - BLOQUEA E DESBLOQUEA INPUTS
+function bloquearCampos() {
+  const form = document.getElementById("form");
+  const fields = form.querySelectorAll(".inputForm");
+  const sexoInputs = form.querySelectorAll('input[name="radio-stacked"]');
+  const checkbox = document.getElementById("invalidCheck2");
+
+  fields.forEach((field) => {
+    field.disabled = true;
+  });
+
+  sexoInputs.forEach((sexoInput) => {
+    sexoInput.disabled = true;
+  });
+
+  checkbox.disabled = true;
+}
+
+function desbloquearCampos() {
+  const form = document.getElementById("form");
+  const fields = form.querySelectorAll(".inputForm");
+  const sexoInputs = form.querySelectorAll('input[name="radio-stacked"]');
+  const checkbox = document.getElementById("invalidCheck2");
+
+  fields.forEach((field) => {
+    field.disabled = false;
+  });
+
+  sexoInputs.forEach((sexoInput) => {
+    sexoInput.disabled = false;
+  });
+
+  checkbox.disabled = false;
+}
+
+//!SECTION - BLOQUEA E DESBLOQUEA INPUTS
+
+// SECTION - EXIBE OS DADOS VERIFICADOS E INSERE O BOTAO DE CONFIRMAR ENVIO
 function exibirDadosFormulario() {
   const form = document.getElementById("form");
   const fields = form.querySelectorAll(".inputForm");
@@ -226,10 +263,46 @@ function exibirDadosFormulario() {
 
   dados += `<p><strong>Sexo:</strong> ${sexoSelecionado}</p>`;
 
-  document.getElementById("dadosVerifica").innerHTML = dados;
+  const dadosVerificaElement = document.getElementById("dadosVerifica");
+  dadosVerificaElement.innerHTML = dados;
+
+  const confirmarEnvioButton = document.createElement("button");
+  confirmarEnvioButton.textContent = "Confirmar Envio";
+  confirmarEnvioButton.addEventListener("click", confirmarEnvio);
+  dadosVerificaElement.appendChild(confirmarEnvioButton);
+
+  const limparCamposButton = document.createElement("button");
+  limparCamposButton.textContent = "Limpar Campos";
+  limparCamposButton.addEventListener("click", () => {
+    limparCampos();
+    desbloquearCampos(); // Adicione esta linha para desbloquear os campos
+  });
+  dadosVerificaElement.appendChild(limparCamposButton);
 }
 
-// !SECTION - EXIBE OS DADOS VERIFICADOS
+function confirmarEnvio() {
+  // Lógica para confirmar o envio dos dados do formulário
+  console.log("Envio confirmado!");
+}
+
+function limparCampos() {
+  const form = document.getElementById("form");
+  const fields = form.querySelectorAll(".inputForm");
+  const sexoInputs = form.querySelectorAll('input[name="radio-stacked"]');
+  const dadosVerificaElement = document.getElementById("dadosVerifica");
+
+  fields.forEach((field) => {
+    field.value = ""; // Limpa o valor do campo
+  });
+
+  sexoInputs.forEach((sexoInput) => {
+    sexoInput.checked = false; // Desmarca o input de sexo
+  });
+
+  dadosVerificaElement.innerHTML = ""; // Limpa os dados exibidos
+}
+
+// !SECTION - EXIBE OS DADOS VERIFICADOS E INSERE O BOTAO DE CONFIRMAR ENVIO
 
 // SECTION - VALIDA O FORMULÁRIO
 function validarFormulario() {
@@ -244,11 +317,12 @@ function validarFormulario() {
     validarSenha() &&
     validarTelefone() &&
     validarSexo() &&
-    validarCheckbox(); // Adicione a validação do checkbox aqui
+    validarCheckbox();
 
   // Exibe os dados verificados se o formulário for válido
   if (isFormValid && !document.querySelector(".error")) {
     exibirDadosFormulario();
+    bloquearCampos(); // Adicione esta linha para bloquear os campos
   }
 }
 

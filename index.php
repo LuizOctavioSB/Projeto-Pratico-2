@@ -135,7 +135,10 @@
       </section>
     </main>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <?php include "php/footer.php"; ?>
+    <?php
+    include "php/footer.php";
+    ?>
+    <script src="Script/valida.js"></script>
   </body>
 
 </html>

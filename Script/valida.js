@@ -139,7 +139,7 @@ document
 
 // SECTION - VALIDA O CAMPO SEXO
 function validarSexo() {
-  const sexo = document.querySelectorAll('input[name="radio-stacked"]');
+  const sexo = document.querySelectorAll('input[name="opSexo"]');
   const errorElement = document.getElementById("errorSexo");
 
   let isChecked = false;
@@ -160,7 +160,7 @@ function validarSexo() {
 }
 
 // Event listener para a validação do campo de sexo
-document.querySelectorAll('input[name="radio-stacked"]').forEach((element) => {
+document.querySelectorAll('input[name="opSexo"]').forEach((element) => {
   element.addEventListener("change", validarSexo);
 });
 
@@ -205,7 +205,7 @@ function sanitizeInput(data) {
 function bloquearCampos() {
   const form = document.getElementById("form");
   const fields = form.querySelectorAll(".inputForm");
-  const sexoInputs = form.querySelectorAll('input[name="radio-stacked"]');
+  const sexoInputs = form.querySelectorAll('input[name="opSexo"]');
   const checkbox = document.getElementById("invalidCheck2");
 
   fields.forEach((field) => {
@@ -222,7 +222,7 @@ function bloquearCampos() {
 function desbloquearCampos() {
   const form = document.getElementById("form");
   const fields = form.querySelectorAll(".inputForm");
-  const sexoInputs = form.querySelectorAll('input[name="radio-stacked"]');
+  const sexoInputs = form.querySelectorAll('input[name="opSexo"]');
   const checkbox = document.getElementById("invalidCheck2");
 
   fields.forEach((field) => {
@@ -242,7 +242,7 @@ function desbloquearCampos() {
 function exibirDadosFormulario() {
   const form = document.getElementById("form");
   const fields = form.querySelectorAll(".inputForm");
-  const sexoInputs = form.querySelectorAll('input[name="radio-stacked"]');
+  const sexoInputs = form.querySelectorAll('input[name="opSexo"]');
   let dados = "<h3>Deseja confirmar os seguintes dados?</h3>";
 
   fields.forEach((field) => {

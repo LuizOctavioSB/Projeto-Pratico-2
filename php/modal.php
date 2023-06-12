@@ -9,32 +9,33 @@
       </div>
 
       <div class="modal-body p-5 pt-0 d-flex justify-content-center">
-        <form id="form" class="needs-validation" novalidate action="modal.php" method="GET">
+        <form id="form" action="perfil.php" method="POST">
           <div id="divFormsTotal">
             <div id="divFormUnida">
               <!-- NOTE - INPUT NOME FORMULÁRIO -->
               <div class="boxForm">
                 <label class="labelForm required">Nome</label>
-                <input type="text" class="inputForm" id="nome" placeholder="Nome" required>
+                <input type="text" class="inputForm" id="nome" name="nome" placeholder="Nome" required>
                 <div id="errorNome" class="error-message"></div>
               </div>
               <!-- NOTE - INPUT NASCIMENTO FORMULÁRIO -->
               <div class="boxForm">
                 <label class="labelForm required">Data de Nascimento</label>
-                <input type="date" class="inputForm" id="dataNasc" required>
+                <input type="date" class="inputForm" id="dataNasc" name="dataNasc" required>
                 <div id="errorDataNasc" class="error-message"></div>
               </div>
               <!-- NOTE - INPUT EMAIL FORMULÁRIO -->
               <div class="boxForm">
                 <label class="labelForm required">E-mail</label>
-                <input type="email" class="inputForm" id="email" placeholder="nome@example.com" required>
+                <input type="email" class="inputForm" id="email" name="email" placeholder="nome@example.com" required>
                 <div id="errorEmail" class="error-message"></div>
               </div>
               <!-- NOTE - INPUT SENHA FORMULÁRIO -->
               <div class="boxForm">
                 <div class="pass-field">
                   <label class="labelForm required">Senha</label>
-                  <input type="password" class="inputForm" id="passwordInput" placeholder="Senha" required>
+                  <input type="password" class="inputForm" id="passwordInput" name="password" placeholder="Senha"
+                    required>
                   <div id="errorSenha" class="error-message"></div>
                   <i class="fa-solid fa-eye"></i>
                 </div>
@@ -42,7 +43,7 @@
               <!-- NOTE - INPUT TELEFONE FORMULÁRIO -->
               <div class="boxForm">
                 <label class="labelForm required">Telefone</label>
-                <input type="tel" class="inputForm" id="phoneInput" placeholder="XX XXXXXXXXX"
+                <input type="tel" class="inputForm" id="phoneInput" name="phoneInput" placeholder="XX XXXXXXXXX"
                   pattern="\(\d{2}\) \d{4,5}-\d{4}" required>
                 <div id="errorTelefone" class="error-message"></div>
               </div>
@@ -52,21 +53,21 @@
                 <div class="inputChecks">
                   <div class="sex1">
                     <div>
-                      <input type="radio" name="radio-stacked">
+                      <input type="radio" name="opSexo" value="Masculino">
                       <label>Masculino</label>
                     </div>
                     <div>
-                      <input type="radio" name="radio-stacked">
+                      <input type="radio" name="opSexo" value="Feminino">
                       <label class="form-check-label">Feminino</label>
                     </div>
                   </div>
                   <div class="sex">
                     <div>
-                      <input type="radio" name="radio-stacked">
+                      <input type="radio" name="opSexo" value="Outro">
                       <label class="form-check-label">Outro</label>
                     </div>
                     <div>
-                      <input type="radio" name="radio-stacked">
+                      <input type="radio" name="opSexo" value="Prefiro não dizer">
                       <label class="form-check-label">Prefiro não dizer</label>
                     </div>
                   </div>
@@ -114,26 +115,9 @@
             <div id=dadosVerifica>
             </div>
             <!-- SECTION - DADOS DO USUÁRIO -->
-            <hr class="my-2">
-            <h2 class="fs-5 fw-bold mb-2">Ou entre com uma das contas a baixo</h2>
-            <button class="w-100 py-2 mb-1 btn btn-outline-secondary rounded-3" type="submit">
-              <svg class="bi me-1" width="16" height="16">
-                <use xlink:href="#twitter"></use>
-              </svg>
-              Sign up with Twitter
-            </button>
-            <button class="w-100 py-2 mb-1 btn btn-outline-primary rounded-3" type="submit">
-              <svg class="bi me-1" width="16" height="16">
-                <use xlink:href="#facebook"></use>
-              </svg>
-              Sign up with Facebook
-            </button>
-            <button class="w-100 py-2 mb-1 btn btn-outline-secondary rounded-3" type="submit">
-              <svg class="bi me-1" width="16" height="16">
-                <use xlink:href="#github"></use>
-              </svg>
-              Sign up with GitHub
-            </button>
+            <?php
+            include "dadosBanco.php";
+            ?>
         </form>
       </div>
     </div>
@@ -141,5 +125,3 @@
 </div>
 
 </div>
-
-<script src="Script/valida.js"></script>

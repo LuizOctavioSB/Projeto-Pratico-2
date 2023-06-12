@@ -618,7 +618,8 @@ iframe {
 #bodyPLs,
 #bodyContato,
 #mainNovaConta,
-#bodyLogin {
+#bodyLogin,
+#bodyPerfil {
   background-color: var(--cor-fundo);
   margin: 2% 6% 0 6%;
   display: flex;
@@ -667,6 +668,7 @@ hr {
 #div1 p,
 #div2 p,
 #div3 p {
+  text-align: left;
   color: white;
 }
 
@@ -684,6 +686,7 @@ hr {
   display: flex;
   flex-direction: column;
   gap: 3vh;
+  align-items: flex-start;
 }
 
 #div1 h3 {

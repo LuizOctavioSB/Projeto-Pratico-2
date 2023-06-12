@@ -21,11 +21,15 @@
     include "php/header.php";
     ?>
     <main>
-      <div id="dadosPerfil">
-        <?php
-        include "php/dadosBanco.php";
-        ?>
-      </div>
+      <section id="dadosPerfil">
+        <div class="card mb-3 bg-transparent border-color-custom" style="max-width: 18rem;">
+          <div class="card-header border-color-custom text-white">Dados da conta:</div>
+          <div class="card-body">
+            <?php
+            include "php/banco.php";
+            ?>
+          </div>
+      </section>
     </main>
     <?php
     include "php/footer.php";

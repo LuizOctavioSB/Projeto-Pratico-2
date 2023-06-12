@@ -2,8 +2,7 @@
 function mysqlConnect()
 {
   $host = "localhost";
-  $servername = "silksong";
-  $username = "spartan";
+  $username = "root";
   $password = "senha123";
   $dbname = "silksong";
   $options = [
@@ -24,7 +23,7 @@ function mysqlConnect()
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $pdo = mysqlConnect();
 
-  $nome = $_POST['Nome'];
+  $nome = $_POST['nome'];
   $email = $_POST['email'];
   $dataNasc = $_POST['dataNasc'];
   $phoneInput = $_POST['phoneInput'];
@@ -35,14 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   if ($stmt->rowCount() > 0) {
     echo "Dados salvos com sucesso!";
-
-    echo "<h3>Dados inseridos:</h3>";
-    echo "<p><strong>Nome:</strong> $nome</p>";
-    echo "<p><strong>Email:</strong> $email</p>";
-    echo "<p><strong>Data de Nascimento:</strong> $dataNascimento</p>";
-    echo "<p><strong>Telefone:</strong> $telefone</p>";
-    echo "<p><strong>Aluno:</strong> $aluno</p>";
-    echo "<p><strong>Aluno:</strong> $opSexo</p>";
+    include "dadosBanco.php";
   } else {
     // Ocorreu um erro ao salvar os dados
     echo "Erro ao salvar os dados. Por favor, tente novamente.";

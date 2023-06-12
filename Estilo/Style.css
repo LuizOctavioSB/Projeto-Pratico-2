@@ -45,6 +45,22 @@ ul {
   padding-left: 0px !important;
 }
 
+.border-color-custom {
+  border-color: #790eab !important;
+}
+
+.border-color-custom p,
+.border-color-custom b,
+.border-color-custom h3 {
+  color: white !important;
+}
+
+#dadosPerfil {
+  display: flex;
+  justify-content: center;
+  width: auto !important;
+}
+
 /* !SECTION - GERAL */
 
 /* SECTION - TELA CRIAR CONTA */

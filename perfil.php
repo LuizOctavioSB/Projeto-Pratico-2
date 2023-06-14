@@ -26,10 +26,12 @@
           <div class="card-header border-color-custom text-white">Dados da conta:</div>
           <div class="card-body">
             <?php
-            include "php/banco.php";
+            include "php/dadosBanco.php";
             ?>
           </div>
+        </div>
       </section>
+
     </main>
     <?php
     include "php/footer.php";

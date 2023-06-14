@@ -84,7 +84,6 @@
                     </label>
                   </div>
                 </div>
-
                 <div class="col-12">
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="invalidCheck1">
@@ -94,7 +93,6 @@
                     </label>
                   </div>
                 </div>
-
                 <div class="col-12">
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
@@ -115,9 +113,7 @@
             <div id=dadosVerifica>
             </div>
             <!-- SECTION - DADOS DO USUÁRIO -->
-            <?php
-            include "php/dadosBanco.php";
-            ?>
+            <button type="submit" id="confirmarEnvio" hidden>Confirmar envio</button>
         </form>
       </div>
     </div>

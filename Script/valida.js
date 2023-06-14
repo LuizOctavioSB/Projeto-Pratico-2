@@ -209,11 +209,11 @@ function bloquearCampos() {
   const checkbox = document.getElementById("invalidCheck2");
 
   fields.forEach((field) => {
-    field.disabled = true;
+    field.readOnly = true;
   });
 
   sexoInputs.forEach((sexoInput) => {
-    sexoInput.disabled = true;
+    sexoInput.readOnly = true;
   });
 
   checkbox.disabled = true;
@@ -226,11 +226,11 @@ function desbloquearCampos() {
   const checkbox = document.getElementById("invalidCheck2");
 
   fields.forEach((field) => {
-    field.disabled = false;
+    field.readOnly = false;
   });
 
   sexoInputs.forEach((sexoInput) => {
-    sexoInput.disabled = false;
+    sexoInput.readOnly = false;
   });
 
   checkbox.disabled = false;
@@ -238,7 +238,40 @@ function desbloquearCampos() {
 
 //!SECTION - BLOQUEA E DESBLOQUEA INPUTS
 
-// SECTION - EXIBE OS DADOS VERIFICADOS E INSERE O BOTAO DE CONFIRMAR ENVIO
+//SECTION - EXIBE E ESCONDE BOTÕES
+function mostrarBotao() {
+  var confirmar = document.getElementById("confirmarEnvio");
+  var continua = document.getElementById("signButton");
+  confirmar.removeAttribute("hidden");
+  continua.setAttribute("hidden", true);
+}
+
+function esconderBotao() {
+  var confirmar = document.getElementById("confirmarEnvio");
+  var continua = document.getElementById("signButton");
+  confirmar.setAttribute("hidden", true);
+  continua.removeAttribute("hidden");
+}
+//!SECTION - EXIBE E ESCONDE BOTÕES
+
+function limparCampos() {
+  const form = document.getElementById("form");
+  const fields = form.querySelectorAll(".inputForm");
+  const sexoInputs = form.querySelectorAll('input[name="radio-stacked"]');
+  const dadosVerificaElement = document.getElementById("dadosVerifica");
+
+  fields.forEach((field) => {
+    field.value = ""; // Limpa o valor do campo
+  });
+
+  sexoInputs.forEach((sexoInput) => {
+    sexoInput.checked = false; // Desmarca o input de sexo
+  });
+
+  dadosVerificaElement.innerHTML = ""; // Limpa os dados exibidos
+}
+
+// SECTION - EXIBE OS DADOS VERIFICADOS
 function exibirDadosFormulario() {
   const form = document.getElementById("form");
   const fields = form.querySelectorAll(".inputForm");
@@ -266,16 +299,14 @@ function exibirDadosFormulario() {
   const dadosVerificaElement = document.getElementById("dadosVerifica");
   dadosVerificaElement.innerHTML = dados;
 
-  const confirmarEnvioButton = document.createElement("button");
-  confirmarEnvioButton.textContent = "Confirmar Envio";
-  confirmarEnvioButton.addEventListener("click", confirmarEnvio);
-  dadosVerificaElement.appendChild(confirmarEnvioButton);
+  mostrarBotao();
 
   const limparCamposButton = document.createElement("button");
   limparCamposButton.textContent = "Limpar Campos";
   limparCamposButton.addEventListener("click", () => {
     limparCampos();
-    desbloquearCampos(); // Adicione esta linha para desbloquear os campos
+    desbloquearCampos();
+    esconderBotao(); // Adicione esta linha para desbloquear os campos
   });
   dadosVerificaElement.appendChild(limparCamposButton);
 }
@@ -285,24 +316,7 @@ function confirmarEnvio() {
   console.log("Envio confirmado!");
 }
 
-function limparCampos() {
-  const form = document.getElementById("form");
-  const fields = form.querySelectorAll(".inputForm");
-  const sexoInputs = form.querySelectorAll('input[name="radio-stacked"]');
-  const dadosVerificaElement = document.getElementById("dadosVerifica");
-
-  fields.forEach((field) => {
-    field.value = ""; // Limpa o valor do campo
-  });
-
-  sexoInputs.forEach((sexoInput) => {
-    sexoInput.checked = false; // Desmarca o input de sexo
-  });
-
-  dadosVerificaElement.innerHTML = ""; // Limpa os dados exibidos
-}
-
-// !SECTION - EXIBE OS DADOS VERIFICADOS E INSERE O BOTAO DE CONFIRMAR ENVIO
+// !SECTION - EXIBE OS DADOS VERIFICADOS
 
 // SECTION - VALIDA O FORMULÁRIO
 function validarFormulario() {
@@ -328,9 +342,121 @@ function validarFormulario() {
 
 // !SECTION - VALIDA O FORMULÁRIO
 
+document
+  .getElementById("confirmarEnvio")
+  .addEventListener("click", function () {
+    bloquearCampos();
+  });
+
 // SECTION - EXIBE OS DADOS VERIFICADOS
 signButton.addEventListener("click", () => {
   validarFormulario();
 });
 
 // !SECTION - EXIBE OS DADOS VERIFICADOS
+
+// SECTION - BADGES
+// Obter elementos do botão e do contador
+// Obter elementos do botão e do contador
+const greenBtn = document.getElementById("greenBtn");
+const redBtn = document.getElementById("redBtn");
+const greenCount = document.getElementById("greenCount");
+const redCount = document.getElementById("redCount");
+
+// Recuperar a quantidade de cliques armazenada no localStorage
+let greenClicks = parseInt(localStorage.getItem("greenClicks")) || 0;
+let redClicks = parseInt(localStorage.getItem("redClicks")) || 0;
+
+// Atualizar os contadores de cliques com os valores recuperados
+greenCount.textContent = greenClicks;
+redCount.textContent = redClicks;
+
+// Atualizar o contador de cliques e salvar no localStorage ao clicar no botão verde
+greenBtn.addEventListener("click", () => {
+  greenClicks++;
+  greenCount.textContent = greenClicks;
+  localStorage.setItem("greenClicks", greenClicks);
+
+  // Diminuir o contador do botão vermelho na mesma quantidade (min: 0)
+  redClicks = Math.max(0, redClicks - 1);
+  redCount.textContent = redClicks;
+  localStorage.setItem("redClicks", redClicks);
+});
+
+// Atualizar o contador de cliques e salvar no localStorage ao clicar no botão vermelho
+redBtn.addEventListener("click", () => {
+  redClicks++;
+  redCount.textContent = redClicks;
+  localStorage.setItem("redClicks", redClicks);
+
+  // Diminuir o contador do botão verde na mesma quantidade (min: 0)
+  greenClicks = Math.max(0, greenClicks - 1);
+  greenCount.textContent = greenClicks;
+  localStorage.setItem("greenClicks", greenClicks);
+});
+
+// !SECTION - BADGES
+
+// SECTION - CARREGA LINKS
+
+$(document).ready(function () {
+  // Carrega todos os iframes visíveis no slide ativo e no próximo slide quando o documento estiver pronto
+  $(
+    ".carousel-item.active .carousel-iframe, .carousel-item.active + .carousel-item .carousel-iframe"
+  ).each(function () {
+    loadIframe($(this));
+  });
+
+  // Carrega os iframes do próximo slide antes que o slide seja trocado
+  $("#carouselExampleIndicators").on("slide.bs.carousel", function (event) {
+    var nextSlide = $(event.relatedTarget).next(".carousel-item");
+    if (nextSlide.length === 0) {
+      nextSlide = $(".carousel-item").first();
+    }
+    var nextIframe = nextSlide.find(".carousel-iframe");
+    nextIframe.each(function () {
+      loadIframe($(this));
+    });
+  });
+
+  // Função para carregar o iframe
+  function loadIframe(iframe) {
+    if (!iframe.attr("src")) {
+      iframe.attr("src", iframe.attr("data-src"));
+      iframe.on("load", function () {
+        iframe.removeClass("d-none");
+      });
+    }
+  }
+});
+
+// !SECTION - CARREGA LINKS
+
+// SECTION - ICONE PERFIL
+const menuPerfil = document.getElementById("menuPerfil");
+const menu = document.getElementById("menu");
+const sair = document.getElementById("sair");
+
+function toggleMenu() {
+  menu.style.display = menu.style.display === "block" ? "none" : "block";
+}
+
+function handleClickOutside(event) {
+  if (!menu.contains(event.target) && !menuPerfil.contains(event.target)) {
+    menu.style.display = "none";
+  }
+}
+
+function confirmarSaida() {
+  if (confirm("Deseja realmente sair?")) {
+    // Redirecionar para a página de logout ou executar a ação de logout
+    console.log("Usuário confirmou a saída");
+  } else {
+    console.log("Usuário cancelou a saída");
+  }
+}
+
+menuPerfil.addEventListener("click", toggleMenu);
+document.addEventListener("click", handleClickOutside);
+sair.addEventListener("click", confirmarSaida);
+//!SECTION - ICONE PERFIL

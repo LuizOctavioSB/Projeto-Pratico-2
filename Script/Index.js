@@ -25,27 +25,19 @@ document.addEventListener("DOMContentLoaded", function () {
 // !SECTION - NOVO ITEM NA PLAYLIST
 
 // SECTION - VELOCIDADE DO CARROSSEL
-$(document).ready(function () {
-  // Seletor para o seu carrossel
-  var carouselSelector = "#carouselExampleIndicators";
+const menuPerfil = document.getElementById("menuPerfil");
+const menu = document.getElementById("menu");
 
-  // Velocidade em milissegundos (quanto maior o valor, mais lento será)
-  var slideDuration = 1000;
+function toggleMenu() {
+  menu.style.display = menu.style.display === "block" ? "none" : "block";
+}
 
-  // Tempo de espera entre os slides em milissegundos
-  var slideInterval = 5000;
+function handleClickOutside(event) {
+  if (!menu.contains(event.target) && !menuPerfil.contains(event.target)) {
+    menu.style.display = "none";
+  }
+}
 
-  // Aplica as opções de configuração ao carrossel
-  $(carouselSelector).carousel({
-    interval: slideInterval,
-    ride: "carousel",
-    pause: "hover",
-  });
-
-  // Define a velocidade de transição para cada slide
-  $(".carousel-inner .carousel-item").css(
-    "transition-duration",
-    slideDuration + "ms"
-  );
-});
+menuPerfil.addEventListener("click", toggleMenu);
+document.addEventListener("click", handleClickOutside);
 //!SECTION - VELOCIDADE DO CARROSSEL

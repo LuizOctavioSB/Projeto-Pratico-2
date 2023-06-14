@@ -33,6 +33,52 @@
   font-size: 45px;
 }
 
+.carousel-inner .carousel-item {
+  transition: transform 1s ease-in-out;
+}
+
+#badgesVota {
+  text-align: center;
+}
+
+/* SECTION - MENU PERIFL */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  z-index: 1;
+}
+
+.dropdown-menu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-menu li {
+  padding: 5px 10px;
+}
+
+.dropdown-menu li a {
+  text-decoration: none;
+  color: black;
+}
+
+.dropdown-menu li a:hover {
+  color: blue;
+}
+
+/* !SECTION - MENU PERFIL */
+
 dl,
 ol,
 ul {
@@ -670,6 +716,17 @@ hr {
   margin: 0;
   background-color: var(--cor-fundo);
   height: 0.5px;
+}
+
+#footerLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+}
+
+#footerLinks ol {
+  display: flex;
+  justify-content: center;
 }
 
 #divPai {

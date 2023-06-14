@@ -1,10 +1,11 @@
 <?php
 // Recupera os dados do formulário
-$nome = sanitizeInput($_POST['nome']);
-$email = sanitizeInput($_POST['email']);
-$dataNasc = sanitizeInput($_POST['dataNasc']);
-$phoneInput = sanitizeInput($_POST['phoneInput']);
-$opSexo = sanitizeInput($_POST['opSexo']);
+$Nome = isset($_POST['nome']) ? sanitizeInput($_POST['nome']) : '';
+$Nascimento = isset($_POST['dataNasc']) ? sanitizeInput($_POST['dataNasc']) : '';
+$Email = isset($_POST['email']) ? sanitizeInput($_POST['email']) : '';
+$Senha = isset($_POST['password']) ? sanitizeInput($_POST['password']) : '';
+$Telefone = isset($_POST['phoneInput']) ? sanitizeInput($_POST['phoneInput']) : '';
+$Sexo = isset($_POST['opSexo']) ? sanitizeInput($_POST['opSexo']) : '';
 
 // Função para sanitizar os dados de entrada
 function sanitizeInput($data)
@@ -19,10 +20,9 @@ function sanitizeInput($data)
 }
 
 // Exibe os dados do usuário
-echo "<h3>Dados do Usuário:</h3>";
-echo "<p><strong>Nome:</strong> " . $nome . "</p>";
-echo "<p><strong>E-mail:</strong> " . $email . "</p>";
-echo "<p><strong>Data de Nascimento:</strong> " . $dataNasc . "</p>";
-echo "<p><strong>Telefone:</strong> " . $phoneInput . "</p>";
-echo "<p><strong>Sexo:</strong> " . $opSexo . "</p>";
+echo "<p><strong>Nome:</strong> " . $Nome . "</p>";
+echo "<p><strong>E-mail:</strong> " . $Email . "</p>";
+echo "<p><strong>Data de Nascimento:</strong> " . $Nascimento . "</p>";
+echo "<p><strong>Telefone:</strong> " . $Telefone . "</p>";
+echo "<p><strong>Sexo:</strong> " . $Sexo . "</p>";
 ?>

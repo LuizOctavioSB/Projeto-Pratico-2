@@ -24,120 +24,127 @@
       <?php
       include "PHP/modal.php";
       ?>
-      <div class="my-0 pt-0 mb-5">
-        <div class="p-0 mb-2 pt-0">
-          <div class="container py-5 d-flex flex-column bg-gradient pt-2"
-            style="background: linear-gradient(180deg, rgba(23, 24, 32, 0.54) 0%, #171820 51.56%, rgba(23, 24, 32, 0.49) 100%, rgba(23, 24, 32, 0.54) 100%);">
-            <!-- espaço para as 4 playlists mais acessadas -->
-            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <h1 class="text-white">Playlists mais tocadas</h1>
-                  <div class="scrollable-container">
-                    <ul class="scrollable-list">
-                      <li>
-                        <iframe style="border-radius:12px"
-                          src="https://open.spotify.com/embed/playlist/37i9dQZF1DX0FOF1IUWK1W?utm_source=generator"
-                          width="100%" height="352" frameborder="0" allowfullscreen=""
-                          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                          loading="lazy"></iframe>
-                      </li>
-                      <li>
-                        <iframe style="border-radius:12px"
-                          src="https://open.spotify.com/embed/playlist/37i9dQZF1DXcBWIGoYBM5M?utm_source=generator"
-                          width="100%" height="352" frameborder="0" allowfullscreen=""
-                          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                          loading="lazy"></iframe>
-                      </li>
-                      <li>
-                        <iframe style="border-radius:12px"
-                          src="https://open.spotify.com/embed/playlist/37i9dQZF1DX2L0iB23Enbq?utm_source=generator"
-                          width="100%" height="352" frameborder="0" allowfullscreen=""
-                          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                          loading="lazy"></iframe>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="carousel-item">
-                  <h1 class="text-white">Recomendações</h1>
-                  <div class="scrollable-container">
-                    <ul class="scrollable-list">
-                      <li>
-                        <iframe style="border-radius:12px"
-                          src="https://open.spotify.com/embed/playlist/7yVePGVUlEpK8rK9lfEo9X?utm_source=generator"
-                          width="100%" height="352" frameborder="0" allowfullscreen=""
-                          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                          loading="lazy"></iframe>
-                      </li>
-                      <li>
-                        <iframe style="border-radius:12px"
-                          src="https://open.spotify.com/embed/playlist/47VowA7e4iguOR0lK3Jw80?utm_source=generator"
-                          width="100%" height="352" frameborder="0" allowfullscreen=""
-                          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                          loading="lazy"></iframe>
-                      </li>
-                      <li>
-                        <iframe style="border-radius:12px"
-                          src="https://open.spotify.com/embed/playlist/2F9LnEdXD8uX74WrPWtd2S?utm_source=generator"
-                          width="100%" height="352" frameborder="0" allowfullscreen=""
-                          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                          loading="lazy"></iframe>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="carousel-item">
-                  <h1 class="text-white">Radios mais populares</h1>
-                  <div class="scrollable-container">
-                    <ul class="scrollable-list">
-                      <li>
-                        <iframe style="border-radius:12px"
-                          src="https://open.spotify.com/embed/playlist/37i9dQZF1E4FhRRLh0mmxG?utm_source=generator"
-                          width="100%" height="352" frameBorder="0" allowfullscreen=""
-                          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                          loading="lazy"></iframe>
-                      </li>
-                      <li>
-                        <iframe style="border-radius:12px"
-                          src="https://open.spotify.com/embed/playlist/37i9dQZF1E4uPhOoQbcWWh?utm_source=generator"
-                          width="100%" height="352" frameBorder="0" allowfullscreen=""
-                          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                          loading="lazy"></iframe>
-                      </li>
-                      <li>
-                        <iframe style="border-radius:12px"
-                          src="https://open.spotify.com/embed/playlist/37i9dQZF1E4yD0w5EwExFy?utm_source=generator"
-                          width="100%" height="352" frameBorder="0" allowfullscreen=""
-                          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                          loading="lazy"></iframe>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </button>
+      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active bg-light"></li>
+          <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" class="bg-light"></li>
+          <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" class="bg-light"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active"> <!-- Adicionado a classe "active" -->
+            <h1 class="text-white">Em alta</h1>
+            <div class="scrollable-container">
+              <ul class="scrollable-list">
+                <li>
+                  <iframe class="carousel-iframe" style="border-radius:12px"
+                    data-src="https://open.spotify.com/embed/playlist/37i9dQZEVXbMXbN3EUUhlg?utm_source=generator"
+                    width="100%" height="352" frameBorder="0" allowfullscreen=""
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    loading="lazy"></iframe>
+                </li>
+                <li>
+                  <iframe class="carousel-iframe" style="border-radius:12px"
+                    data-src="https://open.spotify.com/embed/playlist/37i9dQZEVXbMDoHDwVN2tF?utm_source=generator"
+                    width="100%" height="352" frameBorder="0" allowfullscreen=""
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    loading="lazy"></iframe>
+                </li>
+                <li>
+                  <iframe class="carousel-iframe" style="border-radius:12px"
+                    data-src="https://open.spotify.com/embed/playlist/37i9dQZF1DX6aTaZa0K6VA?utm_source=generator"
+                    width="100%" height="352" frameBorder="0" allowfullscreen=""
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    loading="lazy"></iframe>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <h1 class="text-white">Recomendações</h1>
+            <div class="scrollable-container">
+              <ul class="scrollable-list">
+                <li>
+                  <iframe class="carousel-iframe" style="border-radius:12px"
+                    data-src="https://open.spotify.com/embed/playlist/7yVePGVUlEpK8rK9lfEo9X?utm_source=generator"
+                    width="100%" height="352" frameborder="0" allowfullscreen=""
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    loading="lazy"></iframe>
+                </li>
+                <li>
+                  <iframe class="carousel-iframe" style="border-radius:12px"
+                    data-src="https://open.spotify.com/embed/playlist/47VowA7e4iguOR0lK3Jw80?utm_source=generator"
+                    width="100%" height="352" frameborder="0" allowfullscreen=""
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    loading="lazy"></iframe>
+                </li>
+                <li>
+                  <iframe class="carousel-iframe" style="border-radius:12px"
+                    data-src="https://open.spotify.com/embed/playlist/2F9LnEdXD8uX74WrPWtd2S?utm_source=generator"
+                    width="100%" height="352" frameborder="0" allowfullscreen=""
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    loading="lazy"></iframe>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <h1 class="text-white">Radios mais populares</h1>
+            <div class="scrollable-container">
+              <ul class="scrollable-list">
+                <li>
+                  <iframe class="carousel-iframe" style="border-radius:12px"
+                    data-src="https://open.spotify.com/embed/playlist/37i9dQZF1E4FhRRLh0mmxG?utm_source=generator"
+                    width="100%" height="352" frameborder="0" allowfullscreen=""
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    loading="lazy"></iframe>
+                </li>
+                <li>
+                  <iframe class="carousel-iframe" style="border-radius:12px"
+                    data-src="https://open.spotify.com/embed/playlist/37i9dQZF1E4uPhOoQbcWWh?utm_source=generator"
+                    width="100%" height="352" frameborder="0" allowfullscreen=""
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    loading="lazy"></iframe>
+                </li>
+                <li>
+                  <iframe class="carousel-iframe" style="border-radius:12px"
+                    data-src="https://open.spotify.com/embed/playlist/37i9dQZF1E4yD0w5EwExFy?utm_source=generator"
+                    width="100%" height="352" frameborder="0" allowfullscreen=""
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    loading="lazy"></iframe>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
+        <button class="carousel-control-prev btn-light" type="button" data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next btn-light" type="button" data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
 
-      <section>
-        <!-- espaço para ultima playlist ouvida -->
-      </section>
+      <div
+        class="position-relative p-4 mt-2 text-center text-muted bg-body bg-transparent border border-dashed rounded-5">
+        <section id="badgesVota">
+          <h4>Curtiu as Recomendações??</h3>
+            <button id="greenBtn" class="btn btn-success">Curti! 😎<span id="greenCount"
+                class="badge bg-light">0</span></button>
+            <button id="redBtn" class="btn btn-danger">Melhore! 😪 <span id="redCount"
+                class="badge bg-light">0</span></button>
+        </section>
+      </div>
+
     </main>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <?php
     include "php/footer.php";
     ?>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.5.0/js/bootstrap.min.js"></script>
     <script src="Script/valida.js"></script>
   </body>
 

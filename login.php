@@ -24,21 +24,29 @@
       <?php
       include "PHP/modal.php";
       ?>
-      <form action="Index.php" method="get" id="form" id="login">
+      <form action="index.php" method="post" id="form" id="login">
         <div id="formLogin">
           <input type="email" id="email" class="input" name="email" placeholder="Digite seu e-mail" required>
           <input type="password" id="senha" class="input" name="senha" placeholder="Digite sua senha" required>
           <div id="buttonsLogin">
-            <button>Login</button>
+            <button type="submit">Login</button>
             <button data-bs-toggle="modal" data-bs-target="#exampleModal">Criar conta</button>
           </div>
         </div>
         <a id="recuperaSenha" href="RecuperaSenha.php">Esqueceu sua senha?</a>
+
+        <?php if (isset($erro)) { ?>
+          <p class="error">
+            <?php echo $erro; ?>
+          </p>
+        <?php } ?>
       </form>
+
     </main>
     <?php
     include "php/footer.php";
     ?>
+    <script src="Script/valida.js"></script>
   </body>
 
 </html>

@@ -46,6 +46,7 @@
     <?php
     include "php/footer.php";
     ?>
+    <script src="Script/valida.js"></script>
   </body>
 
 </html>
